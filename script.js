@@ -108,8 +108,7 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// Function to prompt user for password options
-function getPasswordOptions() {
+function getPasswordLength() {
   var passwordLength = prompt(
     "Please enter password length. It should be number between 8 and 128."
   );
@@ -121,21 +120,61 @@ function getPasswordOptions() {
     return;
   }
 
-  var lowerCaseOption = confirm(
-    "Please select do you want to include LowerCase characters in to the password?"
-  );
+  return passwordLength;
+}
 
-  var upperCaseOption = confirm(
-    "Please select do you want to include UpperCase characters in to the password ?"
-  );
+// Function to prompt user for password options
+function getPasswordOptions() {
+  // var lowerCaseOption = confirm(
+  //   "Please select do you want to include LowerCase characters in to the password?"
+  // );
 
-  var numberOption = confirm(
-    "Please select do you want to include Numbers in to the password ?"
-  );
+  // var upperCaseOption = confirm(
+  //   "Please select do you want to include UpperCase characters in to the password ?"
+  // );
 
-  var specialCharsOptions = confirm(
-    "Please select do you want to include Special characters in to the password ?"
-  );
+  // var numberOption = confirm(
+  //   "Please select do you want to include Numbers in to the password ?"
+  // );
+
+  // var specialCharsOptions = confirm(
+  //   "Please select do you want to include Special characters in to the password ?"
+  // );
+
+  // if (
+  //   !lowerCaseOption &&
+  //   !upperCaseOption &&
+  //   !numberOption &&
+  //   !specialCharsOptions
+  // ) {
+  //   alert("Please select at least one character type.");
+  //   return;
+  // }
+
+  var userInputs = {
+    passwordLength: prompt(
+      "Please enter password length. It should be number between 8 and 128."
+    ),
+    lowerCase: confirm(
+      "Please select do you want to include LowerCase characters in to the password?"
+    ),
+    upperCase: confirm(
+      "Please select do you want to include UpperCase characters in to the password ?"
+    ),
+    numbers: confirm(
+      "Please select do you want to include Numbers in to the password ?"
+    ),
+    specialChars: confirm(
+      "Please select do you want to include Special characters in to the password ?"
+    ),
+  };
+
+  if (userInputs.passwordLength < 8 || userInputs.passwordLength > 128) {
+    alert(
+      "Please enter password length. It should be number between 8 and 128."
+    );
+    return;
+  }
 
   if (
     !lowerCaseOption &&
@@ -146,10 +185,12 @@ function getPasswordOptions() {
     alert("Please select at least one character type.");
     return;
   }
+
+  return userInputs;
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
+function getRandomElement(arr) {}
 
 // Function to generate password with user input
 function generatePassword() {}
@@ -165,6 +206,8 @@ function writePassword() {
   passwordText.value = password;
 }
 
+getPasswordOptions();
+9;
 generatePassword();
 
 // Add event listener to generate button
