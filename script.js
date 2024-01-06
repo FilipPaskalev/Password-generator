@@ -109,16 +109,7 @@ var upperCasedCharacters = [
 ];
 
 function getPasswordLength() {
-  var passwordLength = prompt(
-    "Please enter password length. It should be number between 8 and 128."
-  );
-
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert(
-      "Please enter password length. It should be number between 8 and 128."
-    );
-    return;
-  }
+  var passwordLength = prompt("Please enter password length. It should be number between 8 and 128.");
 
   return passwordLength;
 }
@@ -140,69 +131,48 @@ function getUpperCaseOption() {
 }
 
 function getNumberOption() {
-  var isNumbersCharsIncluded = confirm(
-    "Please select do you want to include Numbers in to the password ?"
-  );
+  var isNumbersCharsIncluded = confirm("Please select do you want to include Numbers in to the password ?");
 
   return isNumbersCharsIncluded;
 }
 
 function getSpecialCharsOption() {
-  var isSpecialCharsIncluded = confirm(
-    "Please select do you want to include Special characters in to the password ?"
-  );
+  var isSpecialCharsIncluded = confirm("Please select do you want to include Special characters in to the password ?");
 
   return isSpecialCharsIncluded;
 }
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // if (
-  //   !lowerCaseOption &&
-  //   !upperCaseOption &&
-  //   !numberOption &&
-  //   !specialCharsOptions
-  // ) {
-  //   alert("Please select at least one character type.");
-  //   return;
-  // }
+  var minLength = 8;
+  var maxLength = 128;
 
-  var userInputs = {
-    passwordLength: prompt(
-      "Please enter password length. It should be number between 8 and 128."
-    ),
-    lowerCase: confirm(
-      "Please select do you want to include LowerCase characters in to the password?"
-    ),
-    upperCase: confirm(
-      "Please select do you want to include UpperCase characters in to the password ?"
-    ),
-    numbers: confirm(
-      "Please select do you want to include Numbers in to the password ?"
-    ),
-    specialChars: confirm(
-      "Please select do you want to include Special characters in to the password ?"
-    ),
+  var userPasswordLengthInputs = {
+    length: getPasswordLength(),
   };
 
-  if (userInputs.passwordLength < 8 || userInputs.passwordLength > 128) {
-    alert(
-      "Please enter password length. It should be number between 8 and 128."
-    );
+  if (userPasswordLengthInputs.length < minLength || userPasswordLengthInputs.length > maxLength) {
+    alert("Please enter password length. It should be minimum 8 or maximum 128.");
     return;
-  }
+  } else {
+    var userInputSelectedOptions = {
+      isLowerCaseSelected: getLowerCaseOption(),
+      isUpperCaseSelected: getUpperCaseOption(),
+      isNumbersOptionSelected: getNumberOption(),
+      isSpecialCharsOptionSelected: getSpecialCharsOption(),
+    };
 
-  if (
-    !lowerCaseOption &&
-    !upperCaseOption &&
-    !numberOption &&
-    !specialCharsOptions
-  ) {
-    alert("Please select at least one character type.");
-    return;
+    if (Object.values(userInputSelectedOptions).some((value) => value === true)) {
+      var passwordOptions = {
+        ...userPasswordLengthInputs,
+        ...userInputSelectedOptions,
+      };
+      console.log(passwordOptions);
+      return passwordOptions;
+    } else {
+      return alert("Please select at least one character type. \n Please refresh the page to start again.");
+    }
   }
-
-  return userInputs;
 }
 
 // Function for getting a random element from an array
@@ -223,8 +193,6 @@ function writePassword() {
 }
 
 getPasswordOptions();
-9;
-generatePassword();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
