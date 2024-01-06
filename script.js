@@ -68,6 +68,13 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
+
+/**
+ * @description - // TODO
+ * @date 1/6/2024 - 6:51:41 PM
+ * @param {[string]} arr - // TODO
+ * @returns {string} - // TODO
+ */
 function getRandomElementFromArray(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
