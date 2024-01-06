@@ -111,91 +111,15 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   var passwordLength = prompt(
-    "Please enter password length. It should be number between 8 and 128 ?"
+    "Please enter password length. It should be number between 8 and 128."
   );
-
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert(
-      "Please enter password length. It should be number between 8 and 128 ?"
-    );
-    return;
-  }
-
-  var lowercaseOption = confirm(
-    "Please select do you want to include LowerCase characters in to the password ?"
-  );
-  var uppercaseOption = confirm(
-    "Please select do you want to include UpperCase characters in to the password ?"
-  );
-  var numberOption = confirm(
-    "Please select do you want to include Numbers in to the password ?"
-  );
-  var specialCharsOptions = confirm(
-    "Please select do you want to include Special characters in to the password ?"
-  );
-
-  if (
-    !lowercaseOption &&
-    !uppercaseOption &&
-    !numberOption &&
-    !specialCharsOptions
-  ) {
-    alert("Please select at least one character type.");
-    return;
-  }
-
-  var inputOptions = {
-    passLength: passwordLength,
-    lowerCase: lowercaseOption,
-    upperCase: uppercaseOption,
-    numbers: numberOption,
-    specialChars: specialCharacters,
-  };
-
-  return inputOptions;
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-  var randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex];
-}
+function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {
-  var password = [];
-
-  var allPossibleChars = [];
-
-  var allGuaranteeChars = [];
-
-  var options = getPasswordOptions();
-
-  if (options.specialChars) {
-    allPossibleChars = allPossibleChars.concat(specialCharacters);
-    allGuaranteeChars.push(getRandom(specialCharacters));
-  }
-
-  if (options.lowerCase) {
-    allPossibleChars = allPossibleChars.concat(lowerCasedCharacters);
-    allGuaranteeChars.push(getRandom(lowerCasedCharacters));
-  }
-
-  if (options.upperCase) {
-    allPossibleChars = allPossibleChars.concat(upperCasedCharacters);
-    allGuaranteeChars.push(getRandom(upperCasedCharacters));
-  }
-
-  if (options.numbers) {
-    allPossibleChars = allPossibleChars.concat(numericCharacters);
-    allGuaranteeChars.push(getRandom(numericCharacters));
-  }
-
-  var passwordLength =
-    options.inputOptions.passLength - allGuaranteeChars.length;
-
-  for (let i = 0; i < passwordLength; i++) {}
-}
+function generatePassword() {}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
