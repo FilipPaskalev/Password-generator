@@ -38,7 +38,13 @@ const getUserOption = (type) => confirm(`Please select do you want to include ${
 
 const getPasswordLength = (min, max) => prompt(`Please enter password length. It should be NUMBER between ${min} and ${max}.\nPlease refresh the page to start again.`);
 
-// Function to prompt user for password options
+//
+
+/**
+ * @description - Function to prompt user for password options
+ * @date 1/6/2024 - 6:53:35 PM
+ * @returns {{ isLowerCaseSelected: boolean; isUpperCaseSelected: boolean; isNumbersOptionSelected: boolean; isSpecialCharsOptionSelected: boolean; length: number; }}
+ */
 function getPasswordOptions() {
   var userPasswordLengthInputs = {
     length: getPasswordLength(this.minPasswordLength, this.maxPasswordLength),
@@ -67,10 +73,8 @@ function getPasswordOptions() {
   }
 }
 
-// Function for getting a random element from an array
-
 /**
- * @description - // TODO
+ * @description - Function for getting a random element from an array
  * @date 1/6/2024 - 6:51:41 PM
  * @param {[string]} arr - // TODO
  * @returns {string} - // TODO
