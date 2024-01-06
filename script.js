@@ -181,6 +181,11 @@ function getRandomElementFromArray(arr) {
   return arr[randomIndex];
 }
 
+// Function for shuffle array
+function shuffleArray(arr) {
+  return arr.sort((firstElement, secondElement) => 0.5 - Math.random());
+}
+
 // Function to generate password with user input
 function generatePassword() {}
 
