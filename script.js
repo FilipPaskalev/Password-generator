@@ -123,24 +123,40 @@ function getPasswordLength() {
   return passwordLength;
 }
 
+function getLowerCaseOption() {
+  var isLowerCaseCharsIncluded = confirm(
+    "Please select do you want to include LowerCase characters in to the password?"
+  );
+
+  return isLowerCaseCharsIncluded;
+}
+
+function getUpperCaseOption() {
+  var isUpperCaseCharsIncluded = confirm(
+    "Please select do you want to include UpperCase characters in to the password ?"
+  );
+
+  return isUpperCaseCharsIncluded;
+}
+
+function getNumberOption() {
+  var isNumbersCharsIncluded = confirm(
+    "Please select do you want to include Numbers in to the password ?"
+  );
+
+  return isNumbersCharsIncluded;
+}
+
+function getSpecialCharsOption() {
+  var isSpecialCharsIncluded = confirm(
+    "Please select do you want to include Special characters in to the password ?"
+  );
+
+  return isSpecialCharsIncluded;
+}
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // var lowerCaseOption = confirm(
-  //   "Please select do you want to include LowerCase characters in to the password?"
-  // );
-
-  // var upperCaseOption = confirm(
-  //   "Please select do you want to include UpperCase characters in to the password ?"
-  // );
-
-  // var numberOption = confirm(
-  //   "Please select do you want to include Numbers in to the password ?"
-  // );
-
-  // var specialCharsOptions = confirm(
-  //   "Please select do you want to include Special characters in to the password ?"
-  // );
-
   // if (
   //   !lowerCaseOption &&
   //   !upperCaseOption &&
