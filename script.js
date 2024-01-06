@@ -113,6 +113,13 @@ function getPasswordOptions() {
   var passwordLength = prompt(
     "Please enter password length. It should be number between 8 and 128."
   );
+
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert(
+      "Please enter password length. It should be number between 8 and 128 ?"
+    );
+    return;
+  }
 }
 
 // Function for getting a random element from an array
