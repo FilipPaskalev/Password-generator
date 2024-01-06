@@ -116,10 +116,14 @@ function getPasswordOptions() {
 
   if (passwordLength < 8 || passwordLength > 128) {
     alert(
-      "Please enter password length. It should be number between 8 and 128 ?"
+      "Please enter password length. It should be number between 8 and 128."
     );
     return;
   }
+
+  var lowerCaseOption = confirm(
+    "Please select do you want to include LowerCase characters in to the password?"
+  );
 }
 
 // Function for getting a random element from an array
