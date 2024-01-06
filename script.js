@@ -4,31 +4,7 @@
  * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
  * @type {[]}
  */
-var specialCharacters = [
-  "@",
-  "%",
-  "+",
-  "\\",
-  "/",
-  "'",
-  "!",
-  "#",
-  "$",
-  "^",
-  "?",
-  ":",
-  ",",
-  ")",
-  "(",
-  "}",
-  "{",
-  "]",
-  "[",
-  "~",
-  "-",
-  "_",
-  ".",
-];
+var specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
 
 /**
  * @date 1/6/2024 - 3:01:17 PM
@@ -44,34 +20,7 @@ var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
  * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
  * @type {[]}
  */
-var lowerCasedCharacters = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 /**
  * @description - Array of uppercase characters to be included in password
@@ -79,98 +28,41 @@ var lowerCasedCharacters = [
  * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
  * @type {[]}
  */
-var upperCasedCharacters = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
+var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-function getPasswordLength() {
-  var passwordLength = prompt("Please enter password length. It should be number between 8 and 128.");
+var minPasswordLength = 8;
 
-  return passwordLength;
-}
+var maxPasswordLength = 128;
 
-function getLowerCaseOption() {
-  var isLowerCaseCharsIncluded = confirm(
-    "Please select do you want to include LowerCase characters in to the password?"
-  );
+const getUserOption = (type) => confirm(`Please select do you want to include ${type} in to the password?`);
 
-  return isLowerCaseCharsIncluded;
-}
-
-function getUpperCaseOption() {
-  var isUpperCaseCharsIncluded = confirm(
-    "Please select do you want to include UpperCase characters in to the password ?"
-  );
-
-  return isUpperCaseCharsIncluded;
-}
-
-function getNumberOption() {
-  var isNumbersCharsIncluded = confirm("Please select do you want to include Numbers in to the password ?");
-
-  return isNumbersCharsIncluded;
-}
-
-function getSpecialCharsOption() {
-  var isSpecialCharsIncluded = confirm("Please select do you want to include Special characters in to the password ?");
-
-  return isSpecialCharsIncluded;
-}
+const getPasswordLength = (min, max) => prompt(`Please enter password length. It should be NUMBER between ${min} and ${max}.\nPlease refresh the page to start again.`);
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var minLength = 8;
-  var maxLength = 128;
-
   var userPasswordLengthInputs = {
-    length: getPasswordLength(),
+    length: getPasswordLength(this.minPasswordLength, this.maxPasswordLength),
   };
 
-  if (userPasswordLengthInputs.length < minLength || userPasswordLengthInputs.length > maxLength) {
-    alert("Please enter password length. It should be minimum 8 or maximum 128.");
+  if (userPasswordLengthInputs.length < this.minPasswordLength || userPasswordLengthInputs.length > this.maxPasswordLength) {
+    alert(`Please enter correct password length. It should be minimum ${minPasswordLength} or maximum ${maxPasswordLength}.`);
     return;
   } else {
     var userInputSelectedOptions = {
-      isLowerCaseSelected: getLowerCaseOption(),
-      isUpperCaseSelected: getUpperCaseOption(),
-      isNumbersOptionSelected: getNumberOption(),
-      isSpecialCharsOptionSelected: getSpecialCharsOption(),
+      isLowerCaseSelected: getUserOption("LOWER CASE CHARACTERS"),
+      isUpperCaseSelected: getUserOption("UPPER CASE CHARACTERS"),
+      isNumbersOptionSelected: getUserOption("NUMBERS"),
+      isSpecialCharsOptionSelected: getUserOption("SPECIAL CHARACTERS"),
     };
 
     if (Object.values(userInputSelectedOptions).some((value) => value === true)) {
-      var passwordOptions = {
+      var options = {
         ...userPasswordLengthInputs,
         ...userInputSelectedOptions,
       };
-      console.log(passwordOptions);
-      return passwordOptions;
+      return options;
     } else {
-      return alert("Please select at least one character type. \n Please refresh the page to start again.");
+      return alert("Please select at least one character type.\nPlease refresh the page to start again.");
     }
   }
 }
@@ -186,8 +78,48 @@ function shuffleArray(arr) {
   return arr.sort((firstElement, secondElement) => 0.5 - Math.random());
 }
 
+function selectPossibleCharacters(isLowerCaseSelected, isUpperCaseSelected, isNumbersSelected, isSpecialCharsSelected) {
+  var possibleCharacters = [];
+
+  if (isSpecialCharsSelected) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+    possibleCharacters.push(getRandomElementFromArray(specialCharacters));
+  }
+
+  if (isLowerCaseSelected) {
+    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+    possibleCharacters.push(getRandomElementFromArray(lowerCasedCharacters));
+  }
+
+  if (isUpperCaseSelected) {
+    possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+    possibleCharacters.push(getRandomElementFromArray(upperCasedCharacters));
+  }
+
+  if (isNumbersSelected) {
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
+    possibleCharacters.push(getRandomElementFromArray(numericCharacters));
+  }
+
+  possibleCharacters = shuffleArray(possibleCharacters);
+}
+
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  var passwordOptions = getPasswordOptions();
+
+  var guaranteedCharacters = selectPossibleCharacters(
+    passwordOptions.isLowerCaseSelected,
+    passwordOptions.isUpperCaseSelected,
+    passwordOptions.isNumbersOptionSelected,
+    passwordOptions.isSpecialCharsOptionSelected
+  );
+
+  console.log(guaranteedCharacters);
+}
+
+getPasswordOptions();
+// generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -199,8 +131,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
-getPasswordOptions();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
