@@ -30,7 +30,12 @@ var specialCharacters = [
   ".",
 ];
 
-// Array of numeric characters to be included in password
+/**
+ * @date 1/6/2024 - 3:01:17 PM
+ * @description - Array of numeric characters to be included in password
+ * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+ * @type {[]}
+ */
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // Array of lowercase characters to be included in password
