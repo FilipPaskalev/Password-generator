@@ -128,6 +128,10 @@ function getPasswordOptions() {
   var upperCaseOption = confirm(
     "Please select do you want to include UpperCase characters in to the password ?"
   );
+
+  var numberOption = confirm(
+    "Please select do you want to include Numbers in to the password ?"
+  );
 }
 
 // Function for getting a random element from an array
