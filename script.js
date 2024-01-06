@@ -136,6 +136,16 @@ function getPasswordOptions() {
   var specialCharsOptions = confirm(
     "Please select do you want to include Special characters in to the password ?"
   );
+
+  if (
+    !lowerCaseOption &&
+    !upperCaseOption &&
+    !numberOption &&
+    !specialCharsOptions
+  ) {
+    alert("Please select at least one character type.");
+    return;
+  }
 }
 
 // Function for getting a random element from an array
