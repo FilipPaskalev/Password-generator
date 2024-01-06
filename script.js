@@ -73,7 +73,12 @@ var lowerCasedCharacters = [
   "z",
 ];
 
-// Array of uppercase characters to be included in password
+/**
+ * @description - Array of uppercase characters to be included in password
+ * @date 1/6/2024 - 3:02:51 PM
+ * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+ * @type {[]}
+ */
 var upperCasedCharacters = [
   "A",
   "B",
