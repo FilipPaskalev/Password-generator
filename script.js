@@ -73,7 +73,12 @@ function getRandomElementFromArray(arr) {
   return arr[randomIndex];
 }
 
-// Function for shuffle array
+/**
+ * @description - // TODO
+ * @date 1/6/2024 - 6:49:53 PM
+ * @param {[string]} arr - // TODO
+ * @returns {[string]} - // TODO
+ */
 function shuffleArray(arr) {
   return arr.sort((firstElement, secondElement) => 0.5 - Math.random());
 }
