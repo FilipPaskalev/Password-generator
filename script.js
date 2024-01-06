@@ -1,44 +1,46 @@
 /**
- * @date 1/6/2024 - 3:00:36 PM
  * @description - Array of special characters to be included in password
- * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
- * @type {[]}
+ * @type {[string]}
  */
 var specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
 
 /**
- * @date 1/6/2024 - 3:01:17 PM
  * @description - Array of numeric characters to be included in password
- * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
- * @type {[]}
+ * @type {[string]}
  */
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 /**
- * @date 1/6/2024 - 3:02:20 PM
  * @description - Array of lowercase characters to be included in password
- * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
- * @type {[]}
+ * @type {[string]}
  */
 var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 /**
- * @description - Array of uppercase characters to be included in password
- * @date 1/6/2024 - 3:02:51 PM
- * @author © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
- * @type {[]}
+ * @description Array of uppercase characters to be included in password
+ * @type {[string]}
  */
 var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+/**
+ * @description
+ * @type {number}
+ */
 var minPasswordLength = 8;
 
+/**
+ * @description
+ * @type {number}
+ */
 var maxPasswordLength = 128;
 
+/**
+ * @description - // TODO
+ * @date 1/6/2024 - 6:56:19 PM
+ */
 const getUserOption = (type) => confirm(`Please select do you want to include ${type} in to the password?`);
 
 const getPasswordLength = (min, max) => prompt(`Please enter password length. It should be NUMBER between ${min} and ${max}.\nPlease refresh the page to start again.`);
-
-//
 
 /**
  * @description - Function to prompt user for password options
