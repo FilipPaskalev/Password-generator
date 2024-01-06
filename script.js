@@ -132,6 +132,10 @@ function getPasswordOptions() {
   var numberOption = confirm(
     "Please select do you want to include Numbers in to the password ?"
   );
+
+  var specialCharsOptions = confirm(
+    "Please select do you want to include Special characters in to the password ?"
+  );
 }
 
 // Function for getting a random element from an array
