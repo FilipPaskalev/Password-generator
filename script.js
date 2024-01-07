@@ -36,10 +36,14 @@ var maxPasswordLength = 128;
 
 /**
  * @description - // TODO
- * @date 1/6/2024 - 6:56:19 PM
+ * @returns
  */
 const getUserOption = (type) => confirm(`Please select do you want to include ${type} in to the password?`);
 
+/**
+ * @description
+ * @returns
+ */
 const getPasswordLength = (min, max) => prompt(`Please enter password length. It should be NUMBER between ${min} and ${max}.\nPlease refresh the page to start again.`);
 
 /**
