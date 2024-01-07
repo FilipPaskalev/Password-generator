@@ -9,91 +9,83 @@
  */
 
 /**
+ * @description - Array of special characters to be included in password
  * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
- * @description - Array of special characters to be included in password
  */
 var specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
 
 /**
+ * @description - Array of numeric characters to be included in password
  * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
- * @description - Array of numeric characters to be included in password
  */
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 /**
+ * @description - Array of lowercase characters to be included in password
  * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
- * @description - Array of lowercase characters to be included in password
  */
 var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 /**
+ * @description - Array of uppercase characters to be included in password
  * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
- * @description - Array of uppercase characters to be included in password
  */
 var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 /**
+ * @description - Store minimum length of the password.
  * @version 1.0.0
  * @since 1.0.0
  * @type {number}
- * @description - Store minimum length of the password.
  */
 var minPasswordLength = 8;
 
 /**
+ * @description - Store maximum length of the password.
  * @version 1.0.0
  * @since 1.0.0
  * @type {number}
- * @description - Store maximum length of the password.
  */
 var maxPasswordLength = 128;
 
 /**
+ * @description - Function to collect user options.
  * @version 1.0.0
  * @since 1.0.0
- * @see getPasswordOptions()
  * @param {string} type - Message to point to user what type of option should be selected.
  * @returns {boolean} - true if option IS selected, false if option is NOT selected.
- * @description - Function to collect user options.
  */
 const getUserOption = (type) => confirm(`Please select do you want to include ${type} in to the password?`);
 
 /**
+ * @description - Function to collect user option for password length with prompt().
  * @version 1.0.0
  * @since 1.0.0
  * @param {number} min - minimum length of the password.
  * @param {number} max - maximum length of the password.
  * @returns {string} - string element that contains length of the password.
- * @see getPasswordOptions()
- * @description - Function to collect user option for password length with prompt().
  */
 const getPasswordLength = (min, max) => prompt(`Please enter password length. It should be NUMBER between ${min} and ${max}.\nPlease refresh the page to start again.`);
 
 /**
+ * @description - Function to collect all user options for password.
  * @version 1.0.0
  * @since 1.0.0
  * @this minPasswordLength
  * @this maxPasswordLength
- * @returns {{
- *  isLowerCaseSelected: boolean;
- *  isUpperCaseSelected: boolean;
- *  isNumbersOptionSelected: boolean;
- *  isSpecialCharsOptionSelected: boolean;
- *  length: number;
- * }} - object that contains all selected password options from user input.
- * @description - Function to collect all user options for password.
+ * @returns {object} options
  */
 function getPasswordOptions() {
   var userPasswordLengthInputs = {
-    length: getPasswordLength(this.minPasswordLength, this.maxPasswordLength),
+    length: parseInt(getPasswordLength(this.minPasswordLength, this.maxPasswordLength)),
   };
 
   if (userPasswordLengthInputs.length < this.minPasswordLength || userPasswordLengthInputs.length > this.maxPasswordLength) {
@@ -108,9 +100,21 @@ function getPasswordOptions() {
     };
 
     if (Object.values(userInputSelectedOptions).some((value) => value === true)) {
+      /**
+       * Documented as options object
+       * @typedef {object} options - object that contains all selected password options from user input.
+       * @property {boolean} isLowerCaseSelected - store value of user input for lower case option.
+       * @property {boolean} isUpperCaseSelected - store value of user input for upper case option.
+       * @property {boolean} isNumbersOptionSelected - store value of user input for numeric characters option.
+       * @property {boolean} isSpecialCharsOptionSelected - store value of user input for special characters option.
+       * @property {number} length - store value of user input for password length.
+       */
+      //TODO change description of the object
       var options = {
         ...userPasswordLengthInputs,
-        ...userInputSelectedOptions,
+        guaranteedCharacters: {
+          ...userInputSelectedOptions,
+        },
       };
       return options;
     } else {
@@ -120,68 +124,82 @@ function getPasswordOptions() {
 }
 
 /**
+ * @description - Function for getting a random element from an array.
  * @version 1.0.0
  * @since 1.0.0
- * @param {[string]} arr - array of strings.
- * @returns {string} - single string chosen random from input array.
- * @description - Function for getting a random element from an array.
+ * @param {[any]} arr - array of elements. It could be any type of elements
+ * @returns {any} - single element chosen random from input array.
  */
 function getRandomElementFromArray(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
+
   return arr[randomIndex];
 }
 
+function getRandomPropertyFromObject(obj) {
+  var keys = Object.keys(obj);
+
+  return obj[keys[(keys.length * Math.random()) << 0]];
+}
+
 /**
+ * @description - Function that take for input string array and returns same array, but elements are on random positions (shuffled).
  * @version 1.0.0
  * @since 1.0.0
  * @param {[string]} arr - array of strings.
  * @returns {[string]} - same array but all elements are placed on random indexes.
- * @description - Function that take for input string array and returns same array, but elements are on random positions (shuffled).
  */
 const shuffleArray = (arr) => arr.sort((firstElement, secondElement) => 0.5 - Math.random());
 
-function selectPossibleCharacters(isLowerCaseSelected, isUpperCaseSelected, isNumbersSelected, isSpecialCharsSelected) {
-  var possibleCharacters = [];
+function selectGuaranteedCharacters(isLowerCaseSelected, isUpperCaseSelected, isNumbersSelected, isSpecialCharsSelected) {
+  var guaranteedCharacters = [];
 
   if (isSpecialCharsSelected) {
-    possibleCharacters = possibleCharacters.concat(specialCharacters);
-    possibleCharacters.push(getRandomElementFromArray(specialCharacters));
+    guaranteedCharacters.push(getRandomElementFromArray(specialCharacters));
   }
 
   if (isLowerCaseSelected) {
-    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
-    possibleCharacters.push(getRandomElementFromArray(lowerCasedCharacters));
+    guaranteedCharacters.push(getRandomElementFromArray(lowerCasedCharacters));
   }
 
   if (isUpperCaseSelected) {
-    possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
-    possibleCharacters.push(getRandomElementFromArray(upperCasedCharacters));
+    guaranteedCharacters.push(getRandomElementFromArray(upperCasedCharacters));
   }
 
   if (isNumbersSelected) {
-    possibleCharacters = possibleCharacters.concat(numericCharacters);
-    possibleCharacters.push(getRandomElementFromArray(numericCharacters));
+    guaranteedCharacters.push(getRandomElementFromArray(numericCharacters));
   }
 
-  possibleCharacters = shuffleArray(possibleCharacters);
+  return guaranteedCharacters;
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  var passwordOptions = getPasswordOptions();
+  // var passwordOptions = getPasswordOptions();
+  var options = {
+    guaranteedCharacters: {
+      isLowerCaseSelected: true,
+      isUpperCaseSelected: false,
+      isNumbersOptionSelected: true,
+      isSpecialCharsOptionSelected: false,
+    },
+    length: 10,
+  };
 
-  var guaranteedCharacters = selectPossibleCharacters(
-    passwordOptions.isLowerCaseSelected,
-    passwordOptions.isUpperCaseSelected,
-    passwordOptions.isNumbersOptionSelected,
-    passwordOptions.isSpecialCharsOptionSelected
-  );
+  var password = new Array();
 
-  console.log(guaranteedCharacters);
+  for (let i = 0; i < 10; i++) {
+    console.log(getRandomPropertyFromObject(options.guaranteedCharacters));
+  }
+
+  // do {
+  //   if(getRandomElementFromArray(guaranteedCharacters)) password.push()
+  // } while (password === options.length - Object.keys(guaranteedCharacters).length);
+
+  return password;
 }
 
-getPasswordOptions();
-// generatePassword();
+generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
