@@ -1,41 +1,59 @@
 /**
+ * Description placeholder
+ * @date 1/7/2024
+ * @author The author tag identifies the author of an item. In JSDoc 3.2 and later, if the author's name is followed by an email address enclosed in angle brackets, the default template will convert the email address to a mailto: link.
+ * @version 1.0.0
+ * @license MIT
+ * @file The file tag provides a description for a file. Use the tag in a JSDoc comment at the beginning of the file.
+ * @copyright
+ */
+
+/**
  * @description - Array of special characters to be included in password
+ * @since 1.0.0
  * @type {[string]}
  */
 var specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
 
 /**
  * @description - Array of numeric characters to be included in password
+ * @since 1.0.0
  * @type {[string]}
  */
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 /**
  * @description - Array of lowercase characters to be included in password
+ * @since 1.0.0
  * @type {[string]}
  */
 var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 /**
- * @description Array of uppercase characters to be included in password
+ * @description - Array of uppercase characters to be included in password
+ * @since 1.0.0
  * @type {[string]}
  */
 var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 /**
  * @description - Store minimum length of the password.
+ * @since 1.0.0
  * @type {number}
  */
 var minPasswordLength = 8;
 
 /**
  * @description - Store maximum length of the password.
+ * @since 1.0.0
  * @type {number}
  */
 var maxPasswordLength = 128;
 
 /**
  * @description - Function to collect user options.
+ * @since 1.0.0
+ * @see getPasswordOptions()
  * @param {string} type - Message to point to user what type of option should be selected.
  * @returns {boolean} - true if option IS selected, false if option is NOT selected.
  */
@@ -43,6 +61,8 @@ const getUserOption = (type) => confirm(`Please select do you want to include ${
 
 /**
  * @description - Function to collect user option for password length with prompt().
+ * @since 1.0.0
+ * @see getPasswordOptions()
  * @param {number} min - minimum length of the password.
  * @param {number} max - maximum length of the password.
  * @returns {string} - string element that contains length of the password.
@@ -51,6 +71,7 @@ const getPasswordLength = (min, max) => prompt(`Please enter password length. It
 
 /**
  * @description - Function to collect all user options for password.
+ * @since 1.0.0
  * @returns {{
  *  isLowerCaseSelected: boolean;
  *  isUpperCaseSelected: boolean;
@@ -88,7 +109,8 @@ function getPasswordOptions() {
 }
 
 /**
- * @description - Function for getting a random element from an array
+ * @description - Function for getting a random element from an array.
+ * @since 1.0.0
  * @param {[string]} arr - array of strings.
  * @returns {string} - single string chosen random from input array.
  */
