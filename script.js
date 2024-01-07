@@ -23,13 +23,13 @@ var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k
 var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 /**
- * @description
+ * @description - Store minimum length of the password.
  * @type {number}
  */
 var minPasswordLength = 8;
 
 /**
- * @description
+ * @description - Store maximum length of the password.
  * @type {number}
  */
 var maxPasswordLength = 128;
@@ -89,8 +89,8 @@ function getPasswordOptions() {
 
 /**
  * @description - Function for getting a random element from an array
- * @param {[string]} arr - array of strings
- * @returns {string} - single string chosen random from input array
+ * @param {[string]} arr - array of strings.
+ * @returns {string} - single string chosen random from input array.
  */
 function getRandomElementFromArray(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
