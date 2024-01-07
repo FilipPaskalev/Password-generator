@@ -5,73 +5,83 @@
  * @version 1.0.0
  * @license MIT
  * @file The file tag provides a description for a file. Use the tag in a JSDoc comment at the beginning of the file.
- * @copyright
+ * @copyright The copyright tag is used to document copyright information in a file overview comment. Use this tag in combination with the file tag.
  */
 
 /**
- * @description - Array of special characters to be included in password
+ * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
+ * @description - Array of special characters to be included in password
  */
 var specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
 
 /**
- * @description - Array of numeric characters to be included in password
+ * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
+ * @description - Array of numeric characters to be included in password
  */
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 /**
- * @description - Array of lowercase characters to be included in password
+ * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
+ * @description - Array of lowercase characters to be included in password
  */
 var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 /**
- * @description - Array of uppercase characters to be included in password
+ * @version 1.0.0
  * @since 1.0.0
  * @type {[string]}
+ * @description - Array of uppercase characters to be included in password
  */
 var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 /**
- * @description - Store minimum length of the password.
+ * @version 1.0.0
  * @since 1.0.0
  * @type {number}
+ * @description - Store minimum length of the password.
  */
 var minPasswordLength = 8;
 
 /**
- * @description - Store maximum length of the password.
+ * @version 1.0.0
  * @since 1.0.0
  * @type {number}
+ * @description - Store maximum length of the password.
  */
 var maxPasswordLength = 128;
 
 /**
- * @description - Function to collect user options.
+ * @version 1.0.0
  * @since 1.0.0
  * @see getPasswordOptions()
  * @param {string} type - Message to point to user what type of option should be selected.
  * @returns {boolean} - true if option IS selected, false if option is NOT selected.
+ * @description - Function to collect user options.
  */
 const getUserOption = (type) => confirm(`Please select do you want to include ${type} in to the password?`);
 
 /**
- * @description - Function to collect user option for password length with prompt().
+ * @version 1.0.0
  * @since 1.0.0
- * @see getPasswordOptions()
  * @param {number} min - minimum length of the password.
  * @param {number} max - maximum length of the password.
  * @returns {string} - string element that contains length of the password.
+ * @see getPasswordOptions()
+ * @description - Function to collect user option for password length with prompt().
  */
 const getPasswordLength = (min, max) => prompt(`Please enter password length. It should be NUMBER between ${min} and ${max}.\nPlease refresh the page to start again.`);
 
 /**
- * @description - Function to collect all user options for password.
+ * @version 1.0.0
  * @since 1.0.0
+ * @this minPasswordLength
+ * @this maxPasswordLength
  * @returns {{
  *  isLowerCaseSelected: boolean;
  *  isUpperCaseSelected: boolean;
@@ -79,6 +89,7 @@ const getPasswordLength = (min, max) => prompt(`Please enter password length. It
  *  isSpecialCharsOptionSelected: boolean;
  *  length: number;
  * }} - object that contains all selected password options from user input.
+ * @description - Function to collect all user options for password.
  */
 function getPasswordOptions() {
   var userPasswordLengthInputs = {
@@ -109,10 +120,11 @@ function getPasswordOptions() {
 }
 
 /**
- * @description - Function for getting a random element from an array.
+ * @version 1.0.0
  * @since 1.0.0
  * @param {[string]} arr - array of strings.
  * @returns {string} - single string chosen random from input array.
+ * @description - Function for getting a random element from an array.
  */
 function getRandomElementFromArray(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
@@ -120,14 +132,13 @@ function getRandomElementFromArray(arr) {
 }
 
 /**
- * @description - // TODO
- * @date 1/6/2024 - 6:49:53 PM
- * @param {[string]} arr - // TODO
- * @returns {[string]} - // TODO
+ * @version 1.0.0
+ * @since 1.0.0
+ * @param {[string]} arr - array of strings.
+ * @returns {[string]} - same array but all elements are placed on random indexes.
+ * @description - Function that take for input string array and returns same array, but elements are on random positions (shuffled).
  */
-function shuffleArray(arr) {
-  return arr.sort((firstElement, secondElement) => 0.5 - Math.random());
-}
+const shuffleArray = (arr) => arr.sort((firstElement, secondElement) => 0.5 - Math.random());
 
 function selectPossibleCharacters(isLowerCaseSelected, isUpperCaseSelected, isNumbersSelected, isSpecialCharsSelected) {
   var possibleCharacters = [];
