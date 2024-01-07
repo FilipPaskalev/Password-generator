@@ -35,21 +35,29 @@ var minPasswordLength = 8;
 var maxPasswordLength = 128;
 
 /**
- * @description - // TODO
- * @returns
+ * @description - Function to collect user options.
+ * @param {string} type - Message to point to user what type of option should be selected.
+ * @returns {boolean} - true if option IS selected, false if option is NOT selected.
  */
 const getUserOption = (type) => confirm(`Please select do you want to include ${type} in to the password?`);
 
 /**
- * @description
- * @returns
+ * @description - Function to collect user option for password length with prompt().
+ * @param {number} min - minimum length of the password.
+ * @param {number} max - maximum length of the password.
+ * @returns {string} - string element that contains length of the password.
  */
 const getPasswordLength = (min, max) => prompt(`Please enter password length. It should be NUMBER between ${min} and ${max}.\nPlease refresh the page to start again.`);
 
 /**
- * @description - Function to prompt user for password options
- * @date 1/6/2024 - 6:53:35 PM
- * @returns {{ isLowerCaseSelected: boolean; isUpperCaseSelected: boolean; isNumbersOptionSelected: boolean; isSpecialCharsOptionSelected: boolean; length: number; }}
+ * @description - Function to collect all user options for password.
+ * @returns {{
+ *  isLowerCaseSelected: boolean;
+ *  isUpperCaseSelected: boolean;
+ *  isNumbersOptionSelected: boolean;
+ *  isSpecialCharsOptionSelected: boolean;
+ *  length: number;
+ * }} - object that contains all selected password options from user input.
  */
 function getPasswordOptions() {
   var userPasswordLengthInputs = {
@@ -81,9 +89,8 @@ function getPasswordOptions() {
 
 /**
  * @description - Function for getting a random element from an array
- * @date 1/6/2024 - 6:51:41 PM
- * @param {[string]} arr - // TODO
- * @returns {string} - // TODO
+ * @param {[string]} arr - array of strings
+ * @returns {string} - single string chosen random from input array
  */
 function getRandomElementFromArray(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
