@@ -8,6 +8,28 @@
  * @copyright The copyright tag is used to document copyright information in a file overview comment. Use this tag in combination with the file tag.
  */
 
+var userSelection = {
+  passwordLength: 0,
+  options: {
+    specialCharacters: {
+      isSelected: false,
+      utils: ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."],
+    },
+    numericCharacters: {
+      isSelected: false,
+      utils: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    },
+    lowerCaseCharacters: {
+      isSelected: false,
+      utils: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+    },
+    lowerCaseCharacters: {
+      isSelected: false,
+      utils: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+    },
+  },
+};
+
 /**
  * @description - Array of special characters to be included in password
  * @version 1.0.0
@@ -92,14 +114,14 @@ function getPasswordOptions() {
     alert(`Please enter correct password length. It should be minimum ${minPasswordLength} or maximum ${maxPasswordLength}.`);
     return;
   } else {
-    var userInputSelectedOptions = {
-      isLowerCaseSelected: getUserOption("LOWER CASE CHARACTERS"),
-      isUpperCaseSelected: getUserOption("UPPER CASE CHARACTERS"),
-      isNumbersOptionSelected: getUserOption("NUMBERS"),
-      isSpecialCharsOptionSelected: getUserOption("SPECIAL CHARACTERS"),
+    var selectedOptions = {
+      lowerCase: getUserOption("LOWER CASE CHARACTERS"),
+      upperCase: getUserOption("UPPER CASE CHARACTERS"),
+      numbers: getUserOption("NUMBERS"),
+      specialCharacters: getUserOption("SPECIAL CHARACTERS"),
     };
 
-    if (Object.values(userInputSelectedOptions).some((value) => value === true)) {
+    if (Object.values(selectedOptions).some((value) => value === true)) {
       /**
        * Documented as options object
        * @typedef {object} options - object that contains all selected password options from user input.
@@ -113,7 +135,7 @@ function getPasswordOptions() {
       var options = {
         ...userPasswordLengthInputs,
         guaranteedCharacters: {
-          ...userInputSelectedOptions,
+          ...selectedOptions,
         },
       };
       return options;
@@ -139,7 +161,8 @@ function getRandomElementFromArray(arr) {
 function getRandomPropertyFromObject(obj) {
   var keys = Object.keys(obj);
 
-  return obj[keys[(keys.length * Math.random()) << 0]];
+  // return obj[keys[(keys.length * Math.random()) << 0]];
+  return keys[(Math.random() * Object.keys(obj).length) | 0];
 }
 
 /**
@@ -175,9 +198,16 @@ function selectGuaranteedCharacters(isLowerCaseSelected, isUpperCaseSelected, is
 
 // Function to generate password with user input
 function generatePassword() {
-  // var passwordOptions = getPasswordOptions();
+  // var options = getPasswordOptions();
+
+  var guaranteedCharacters = selectGuaranteedCharacters(
+    options.selectedOptions.lowerCase,
+    options.selectedOptions.upperCase,
+    options.selectedOptions.numbers,
+    options.selectedOptions.specialCharacters
+  );
   var options = {
-    guaranteedCharacters: {
+    selectedCharacters: {
       isLowerCaseSelected: true,
       isUpperCaseSelected: false,
       isNumbersOptionSelected: true,
@@ -189,13 +219,32 @@ function generatePassword() {
   var password = new Array();
 
   for (let i = 0; i < 10; i++) {
-    console.log(getRandomPropertyFromObject(options.guaranteedCharacters));
+    console.log(getRandomPropertyFromObject(options.selectedCharacters));
+
+    // switch (getRandomPropertyFromObject(options.selectedCharacters)) {
+    //   case "isLowerCaseSelected":
+    //     password.push(getRandomElementFromArray(lowerCasedCharacters));
+    //     break;
+    //   case "isUpperCaseSelected":
+    //     password.push(getRandomElementFromArray(upperCasedCharacters));
+    //     break;
+    //   case "isNumbersOptionSelected":
+    //     password.push(getRandomElementFromArray(numericCharacters));
+    //     break;
+    //   case "isSpecialCharsOptionSelected":
+    //     password.push(getRandomElementFromArray(specialCharacters));
+    //     break;
+    //   default:
+    //     break;
+    // }
   }
 
   // do {
   //   if(getRandomElementFromArray(guaranteedCharacters)) password.push()
   // } while (password === options.length - Object.keys(guaranteedCharacters).length);
 
+  password.join();
+  console.log(password);
   return password;
 }
 
