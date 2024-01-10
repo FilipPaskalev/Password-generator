@@ -1,80 +1,61 @@
-// var specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
-// var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-// var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// const specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
+// const numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// const lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// const upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 var utils = {
   passwordLength: {
     min: 8,
     max: 128,
   },
-  specialCharacters: {
-    name: "SPECIAL SYMBOLS",
-    utils: ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."],
-  },
-  numericCharacters: {
-    name: "NUMBERS",
-    utils: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-  },
-  lowerCasedCharacters: {
-    name: "LOWER CASE LETTERS",
-    utils: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-  },
-  upperCasedCharacters: {
-    name: "UPPER CASE LETTERS",
-    utils: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+  chars: {
+    special: ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."],
+    numerical: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    lowerCased: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+    upperCased: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
   },
   messages: {
-    refreshPage: "Please refresh the browser to start again.",
+    refreshPage: "Please refresh (F5) the browser to start again.",
   },
 };
-
-var userOptions = {
-  passwordLength: 0,
-  symbols: {
-    isSpecialCharactersIncluded: false,
-    isNumbersIncluded: false,
-    isLowerCaseCharactersIncluded: false,
-    isUpperCaseCharactersIncluded: false,
-  },
-};
-
-const getUserOption = (typeName) => confirm(`Please select do you want to include ${typeName} in to the password?`);
-
-function validatePasswordLength(minLength, maxLength, userInput) {
-  if (userInput < minLength || userInput > maxLength) {
-    return false;
-  } else {
-    return true;
-  }
-}
 
 function getPasswordLength(minLength, maxLength) {
   var length = prompt(`Please enter password length. It should be number between ${minLength} and ${maxLength}.`);
   return parseInt(length);
 }
 
-function getPasswordOptions() {
-  userOptions.passwordLength = getPasswordLength(utils.passwordLength.min, utils.passwordLength.max);
+const getUserOption = (typeName) => confirm(`Please select do you want to include ${typeName} in to the password?`);
 
-  if (validatePasswordLength(utils.passwordLength.min, utils.passwordLength.max, userOptions.passwordLength)) {
-    userOptions.symbols.isSpecialCharactersIncluded = getUserOption(utils.specialCharacters.name);
-    userOptions.symbols.isNumbersIncluded = getUserOption(utils.numericCharacters.name);
-    userOptions.symbols.isLowerCaseCharactersIncluded = getUserOption(utils.lowerCasedCharacters.name);
-    userOptions.symbols.isUpperCaseCharactersIncluded = getUserOption(utils.upperCasedCharacters.name);
-    if (Object.values(userOptions.symbols).some((value) => value === true)) {
-      console.log(userOptions);
-      return;
-    } else {
-      alert(`Please select at least one character type.\n${utils.messages.refreshPage}`);
-      return;
-    }
-  } else {
+function getPasswordOptions() {
+  var options = {
+    length: getPasswordLength(utils.passwordLength.min, utils.passwordLength.max),
+    selectedSymbols: {
+      isSpecialCharactersIncluded: getUserOption(utils.specialCharacters.name),
+      isNumbersIncluded: getUserOption(utils.numericCharacters.name),
+      isLowerCaseCharactersIncluded: getUserOption(utils.lowerCasedCharacters.name),
+      isUpperCaseCharactersIncluded: getUserOption(utils.upperCasedCharacters.name),
+    },
+  };
+
+  // validate password length
+  if (options.length < utils.passwordLength.min || options.length > utils.passwordLength.max) {
     alert(
       `Please enter correct password length. It should be minimum ${utils.passwordLength.min} and maximum ${utils.passwordLength.max} symbols.\n${utils.messages.refreshPage}`
     );
     return;
   }
+
+  var isAnyCharacterTypeSelected = Object.values(options.selectedSymbols).some((value) => value === true);
+
+  // validate is any character selected
+  if (!isAnyCharacterTypeSelected) {
+    alert(`Please select at least one character type.\n${utils.messages.refreshPage}`);
+    return;
+  }
+
+  // console.log(options);
+
+  return;
 }
 
 function getRandomElementFromArray(arr) {
@@ -88,87 +69,97 @@ function getRandomPropertyFromObject(obj) {
   return keys[(Math.random() * Object.keys(obj).length) | 0];
 }
 
-// const shuffleArray = (arr) => arr.sort((firstElement, secondElement) => 0.5 - Math.random());
-function shuffleArray(arr) {
-  return arr.sort((firstElement, secondElement) => 0.5 - Math.random());
-}
+function selectGuaranteedCharacters(selectedSymbols) {
+  var guaranteedCharacters = [];
 
-function selectGuaranteedCharacters() {
-  // var guaranteedCharacters = [];
-  // if (isSpecialCharsSelected) {
-  //   guaranteedCharacters.push(getRandomElementFromArray(specialCharacters));
-  // }
-  // if (isLowerCaseSelected) {
-  //   guaranteedCharacters.push(getRandomElementFromArray(lowerCasedCharacters));
-  // }
-  // if (isUpperCaseSelected) {
-  //   guaranteedCharacters.push(getRandomElementFromArray(upperCasedCharacters));
-  // }
-  // if (isNumbersSelected) {
-  //   guaranteedCharacters.push(getRandomElementFromArray(numericCharacters));
-  // }
-  // return guaranteedCharacters;
+  if (selectedSymbols.isSpecialCharactersIncluded) {
+    guaranteedCharacters.push(getRandomElementFromArray(utils.characters.special));
+  }
+  if (selectedSymbols.isNumbersIncluded) {
+    guaranteedCharacters.push(getRandomElementFromArray(utils.characters.numeric));
+  }
+  if (selectedSymbols.isLowerCaseCharactersIncluded) {
+    guaranteedCharacters.push(getRandomElementFromArray(utils.characters.lowerCased));
+  }
+  if (selectedSymbols.isUpperCaseCharactersIncluded) {
+    guaranteedCharacters.push(getRandomElementFromArray(utils.characters.upperCased));
+  }
+
+  return guaranteedCharacters;
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  // TODO remove comment after finish with coding
   // var options = getPasswordOptions();
-  // var guaranteedCharacters = selectGuaranteedCharacters(
-  //   options.selectedOptions.lowerCase,
-  //   options.selectedOptions.upperCase,
-  //   options.selectedOptions.numbers,
-  //   options.selectedOptions.specialCharacters
-  // );
-  // var options = {
-  //   selectedCharacters: {
-  //     isLowerCaseSelected: true,
-  //     isUpperCaseSelected: false,
-  //     isNumbersOptionSelected: true,
-  //     isSpecialCharsOptionSelected: false,
-  //   },
-  //   length: 10,
-  // };
-  // var password = new Array();
-  // for (let i = 0; i < 10; i++) {
-  // console.log(getRandomPropertyFromObject(options.selectedCharacters));
-  // switch (getRandomPropertyFromObject(options.selectedCharacters)) {
-  //   case "isLowerCaseSelected":
-  //     password.push(getRandomElementFromArray(lowerCasedCharacters));
-  //     break;
-  //   case "isUpperCaseSelected":
-  //     password.push(getRandomElementFromArray(upperCasedCharacters));
-  //     break;
-  //   case "isNumbersOptionSelected":
-  //     password.push(getRandomElementFromArray(numericCharacters));
-  //     break;
-  //   case "isSpecialCharsOptionSelected":
-  //     password.push(getRandomElementFromArray(specialCharacters));
-  //     break;
-  //   default:
-  //     break;
-  // }
-  // }
-  // do {
-  //   if(getRandomElementFromArray(guaranteedCharacters)) password.push()
-  // } while (password === options.length - Object.keys(guaranteedCharacters).length);
-  // password.join();
-  // console.log(password);
-  // return password;
+
+  //TODO delete after finish with coding
+  options = {
+    length: 10,
+    selectedSymbols: {
+      isSpecialCharactersIncluded: false,
+      isNumbersIncluded: true,
+      isLowerCaseCharactersIncluded: false,
+      isUpperCaseCharactersIncluded: false,
+    },
+  };
+
+  // add guaranteed characters in password
+  var password = selectGuaranteedCharacters(options.selectedSymbols);
+
+  var passwordLength = password.length;
+
+  // console.log(password.length);
+
+  do {
+    var selectedOption = getRandomPropertyFromObject(options.selectedSymbols);
+    switch (selectedOption) {
+      case "isSpecialCharactersIncluded":
+        if (options.selectedSymbols.isSpecialCharactersIncluded) {
+          password.push(getRandomElementFromArray(utils.characters.special));
+        }
+        passwordLength++;
+        break;
+      case "isNumbersIncluded":
+        if (options.selectedSymbols.isNumbersIncluded) {
+          password.push(getRandomElementFromArray(utils.characters.numeric));
+        }
+        passwordLength++;
+        break;
+      case "isLowerCaseCharactersIncluded":
+        if (options.selectedSymbols.isLowerCaseCharactersIncluded) {
+          password.push(getRandomElementFromArray(utils.characters.lowerCased));
+        }
+        passwordLength++;
+        break;
+      case "isUpperCaseCharactersIncluded":
+        if (options.selectedSymbols.isUpperCaseCharactersIncluded) {
+          password.push(getRandomElementFromArray(utils.characters.upperCased));
+        }
+        passwordLength++;
+        break;
+      default:
+        break;
+    }
+  } while (passwordLength < options.length);
+
+  console.log(password);
+
+  return password;
 }
 
-getPasswordOptions();
 generatePassword();
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+// var password = generatePassword();
+// var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-}
+// passwordText.value = password;
+// }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
