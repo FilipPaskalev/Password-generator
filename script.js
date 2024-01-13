@@ -37,6 +37,11 @@ function getPasswordOptions() {
     return;
   }
 
+  options.inclSpecialChars = confirm(utils.msgs.selectOption("special", "symbols"));
+  options.inclNumeric = confirm(utils.msgs.selectOption("number", "characters"));
+  options.inclLowerCase = confirm(utils.msgs.selectOption("lower case", "letters"));
+  options.inclUpperCase = confirm(utils.msgs.selectOption("upper case", "letters"));
+
   return options;
 }
 
