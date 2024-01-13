@@ -11,12 +11,12 @@ const utils = {
     max: 128,
   },
   msgs: {
-    tryAgain: "Please try again to generate password.",
+    startAgain: "Please try again to generate password.",
     optionsCondition: "Select at least one option for the password.",
     enterLength: (min, max) => `Enter length of the password. It should be a number between ${min} and ${max}`,
-    wrongLength: (min, max, refreshPageMsg) => `Incorrect password length. Please enter a valid password length between, it should be number between ${min} and ${max}.\n\n${refreshPageMsg}`,
+    wrongLength: (min, max, startAgainMsg) => `Incorrect password length. Please enter a valid password length between, it should be number between ${min} and ${max}.\n\n${startAgainMsg}`,
     selectOption: (characterName, type, condition) => `Select if you want to include ${characterName} ${type} in password.\n${condition}`,
-    noneSelectedOptions: (condition, refreshPageMsg) => `None options have been selected. ${condition}\n\n${refreshPageMsg}`,
+    noneSelectedOptions: (condition, startAgainMsg) => `None options have been selected. ${condition}\n\n${startAgainMsg}`,
   }
 }
 
@@ -25,7 +25,7 @@ function getPasswordOptions() {
   var options = {
     length: undefined,
     inclSpecialChars: false,
-    inclNumeric: false,
+    inclNumbers: false,
     inclLowerCase: false,
     inclUpperCase: false,
   };
@@ -33,14 +33,19 @@ function getPasswordOptions() {
   options.length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
 
   if (isNaN(options.length) || options.length < utils.length.min || options.length > utils.length.max) {
-    alert(utils.msgs.wrongLength(utils.length.min, utils.length.max, utils.msgs.tryAgain));
+    alert(utils.msgs.wrongLength(utils.length.min, utils.length.max, utils.msgs.startAgain));
     return;
   }
 
   options.inclSpecialChars = confirm(utils.msgs.selectOption("special", "symbols"));
-  options.inclNumeric = confirm(utils.msgs.selectOption("number", "characters"));
+  options.inclNumbers = confirm(utils.msgs.selectOption("number", "characters"));
   options.inclLowerCase = confirm(utils.msgs.selectOption("lower case", "letters"));
   options.inclUpperCase = confirm(utils.msgs.selectOption("upper case", "letters"));
+
+  if (!options.inclSpecialChars && !options.inclNumbers && !options.inclLowerCase && !options.inclUpperCase) {
+    alert(utils.msgs.noneSelectedOptions(utils.msgs.optionsCondition, utils.msgs.startAgain));
+    return;
+  }
 
   return options;
 }
