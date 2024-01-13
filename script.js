@@ -1,20 +1,20 @@
 // prettier-ignore
 const utils = {
   chars: {
-    special:["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."].join(""),
-    numeric:["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].join(""),
-    lowerCased: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"].join(""),
-    upperCase:["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"].join(""),
+    special:["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."],
+    numeric:["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    lowerCased: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+    upperCase:["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
   },
   length: {
     min: 8,
     max: 128,
   },
   msgs: {
-    refreshPage:`Refresh page(F5) to start again.`,
+    tryAgain: "Please try again to generate password.",
     optionsCondition: "Select at least one option for the password.",
     enterLength: (min, max) => `Enter length of the password. It should be a number between ${min} and ${max}`,
-    wrongLength: (min, max, refreshPageMsg) =>`Incorrect password length. Please enter a valid password length between, it should be number between ${min} and ${max}.\n\n${refreshPageMsg}`,
+    wrongLength: (min, max, refreshPageMsg) => `Incorrect password length. Please enter a valid password length between, it should be number between ${min} and ${max}.\n\n${refreshPageMsg}`,
     selectOption: (characterName, type, condition) => `Select if you want to include ${characterName} ${type} in password.\n${condition}`,
     noneSelectedOptions: (condition, refreshPageMsg) => `None options have been selected. ${condition}\n\n${refreshPageMsg}`,
   }
@@ -31,6 +31,11 @@ function getPasswordOptions() {
   };
 
   options.length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
+
+  if (isNaN(options.length) || options.length < utils.length.min || options.length > utils.length.max) {
+    alert(utils.msgs.wrongLength(utils.length.min, utils.length.max, utils.msgs.tryAgain));
+    return;
+  }
 
   return options;
 }
