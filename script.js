@@ -22,9 +22,17 @@ const utils = {
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // var options = {};
+  var options = {
+    length: undefined,
+    inclSpecialChars: false,
+    inclNumeric: false,
+    inclLowerCase: false,
+    inclUpperCase: false,
+  };
 
   var length = prompt();
+
+  return options;
 }
 
 // Function for getting a random element from an array
