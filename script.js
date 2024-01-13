@@ -23,7 +23,7 @@ const utils = {
 // Function to prompt user for password options
 function getPasswordOptions() {
   var options = {
-    length: undefined,
+    length: 0,
     inclSpecialChars: false,
     inclNumbers: false,
     inclLowerCase: false,
@@ -59,6 +59,12 @@ function getRandom(arr) {
 function generatePassword() {
   var options = getPasswordOptions();
   var password = "";
+
+  if (options.inclSpecialChars) password.concat(utils.chars.special);
+  if (options.inclNumbers) password.concat(utils.chars.numeric);
+  if (options.inclLowerCase) password.concat(utils.chars.lowerCased);
+  if (options.inclUpperCase) password.concat(utils.chars.upperCase);
+
   return password;
 }
 
