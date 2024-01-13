@@ -11,15 +11,21 @@ const utils = {
     max: 128,
   },
   msgs: {
-    enterLength: "",
-    wrongLength:"",
-    selectOption: "",
-    noneSelectedOptions: "",
+    refreshPage:`Refresh page(F5) to start again.`,
+    optionsCondition: "Select at least one option for the password.",
+    enterLength: (min, max) => `Enter length of the password. It should be a number between ${min} and ${max}`,
+    wrongLength: (min, max, refreshPageMsg) =>`Incorrect password length. Please enter a valid password length between, it should be number between ${min} and ${max}.\n\n${refreshPageMsg}`,
+    selectOption: (characterName, type, condition) => `Select if you want to include ${characterName} ${type} in password.\n${condition}`,
+    noneSelectedOptions: (condition, refreshPageMsg) => `None options have been selected. ${condition}\n\n${refreshPageMsg}`,
   }
 }
 
 // Function to prompt user for password options
-function getPasswordOptions() {}
+function getPasswordOptions() {
+  // var options = {};
+
+  var length = prompt();
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {}
