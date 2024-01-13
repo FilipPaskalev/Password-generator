@@ -60,10 +60,10 @@ function generatePassword() {
   var options = getPasswordOptions();
   var password = "";
 
-  if (options.inclSpecialChars) password.concat(utils.chars.special);
-  if (options.inclNumbers) password.concat(utils.chars.numeric);
-  if (options.inclLowerCase) password.concat(utils.chars.lowerCased);
-  if (options.inclUpperCase) password.concat(utils.chars.upperCase);
+  if (options.inclSpecialChars) password = password.concat(utils.chars.special);
+  if (options.inclNumbers) password = password.concat(utils.chars.numeric);
+  if (options.inclLowerCase) password = password.concat(utils.chars.lowerCased);
+  if (options.inclUpperCase) password = password.concat(utils.chars.upperCase);
 
   return password;
 }
