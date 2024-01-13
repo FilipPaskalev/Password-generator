@@ -37,10 +37,10 @@ function getPasswordOptions() {
     return;
   }
 
-  options.inclSpecialChars = confirm(utils.msgs.selectOption("special", "symbols"));
-  options.inclNumbers = confirm(utils.msgs.selectOption("number", "characters"));
-  options.inclLowerCase = confirm(utils.msgs.selectOption("lower case", "letters"));
-  options.inclUpperCase = confirm(utils.msgs.selectOption("upper case", "letters"));
+  options.inclSpecialChars = confirm(utils.msgs.selectOption("special", "symbols", utils.msgs.optionsCondition));
+  options.inclNumbers = confirm(utils.msgs.selectOption("number", "characters", utils.msgs.optionsCondition));
+  options.inclLowerCase = confirm(utils.msgs.selectOption("lower case", "letters", utils.msgs.optionsCondition));
+  options.inclUpperCase = confirm(utils.msgs.selectOption("upper case", "letters", utils.msgs.optionsCondition));
 
   if (!options.inclSpecialChars && !options.inclNumbers && !options.inclLowerCase && !options.inclUpperCase) {
     alert(utils.msgs.noneSelectedOptions(utils.msgs.optionsCondition, utils.msgs.startAgain));
