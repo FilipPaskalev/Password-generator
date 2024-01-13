@@ -58,6 +58,7 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   var options = getPasswordOptions();
+
   var password = "";
 
   if (options.inclSpecialChars) password = password.concat(getRandom(utils.chars.special));
@@ -65,6 +66,15 @@ function generatePassword() {
   if (options.inclLowerCase) password = password.concat(getRandom(utils.chars.lowerCased));
   if (options.inclUpperCase) password = password.concat(getRandom(utils.chars.upperCase));
 
+  while (password.length < options.length) {
+    var randomChar = getRandom([
+      utils.chars.special,
+      utils.chars.numeric,
+      utils.chars.lowerCased,
+      utils.chars.upperCase,
+    ]);
+    password += getRandom(randomChar);
+  }
   return password;
 }
 
