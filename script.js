@@ -30,7 +30,7 @@ function getPasswordOptions() {
     inclUpperCase: false,
   };
 
-  var length = prompt();
+  options.length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
 
   return options;
 }
@@ -41,8 +41,8 @@ function getRandom(arr) {}
 // Function to generate password with user input
 function generatePassword() {
   var options = getPasswordOptions();
-
   var password = "";
+  return password;
 }
 
 // Get references to the #generate element
