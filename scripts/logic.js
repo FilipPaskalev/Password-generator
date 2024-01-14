@@ -59,7 +59,7 @@ function generatePassword() {
   // };
 
   // Ensure that option is passed with some data and is NOT undefined
-  if (!options) return password;
+  if (!options) return "";
 
   if (options.inclSymbols) {
     password += utils.chars[0].symbols[getRandIndexFromArr(utils.chars[0].symbols)];
