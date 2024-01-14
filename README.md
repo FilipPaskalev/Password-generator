@@ -11,6 +11,7 @@
   - [Installation instructions](#installation-instructions)
     - [Option 1 - Download](#option-1---download)
     - [Option 2 - Clone project](#option-2---clone-project)
+  - [Project structure](#project-structure)
   - [Demo](#demo)
     - [Preview](#preview)
     - [Live demo](#live-demo)
@@ -100,14 +101,19 @@ $ git clone https://github.com/FilipPaskalev/Password-generator.git
 ## Project structure
 
 ```
-project/
-  assets/
-    imgs/
-  scripts/
-.prettierrc
-index.html
-LICENSE
-README.md
+project/        <!-- root directory -->
+  assets/       <!-- directory for the assets -->
+    imgs/       <!-- contains all needed images files -->
+  scripts/      <!-- directory for javascript files -->
+    index.js    <!-- root script file -->
+    logic.js    <!-- store all logic for generating password -->
+    utils.js    <!-- store all needed resources for logic.js -->
+  styles/       <!-- directory for the styles -->
+    style.css   <!-- store css styles for index.html -->
+  .prettierrc   <!-- settings if you using Prettier extension -->
+  index.html    <!-- root html file -->
+  LICENSE       <!-- information about the license -->
+  README.md     <!-- file that describe the project -->
 
 ```
 
