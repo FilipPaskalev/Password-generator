@@ -81,6 +81,9 @@ function generatePassword() {
     characters += utils.chars[3].upperCase.join("");
   }
 
+  // Test - To test is it the join() and validation for possible chars correct remove comments on line 85.
+  // console.log("🚀 ~ generatePassword ~ characters:", characters);
+
   while (password.length < options.length) {
     var randIndex = getRandIndexFromArr(characters);
     password += characters.charAt(randIndex);

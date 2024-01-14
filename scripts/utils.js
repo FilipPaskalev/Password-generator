@@ -42,14 +42,3 @@ const utils = {
 function getRandIndexFromArr(arr) {
   return parseInt(Math.floor(Math.random() * arr.length));
 }
-
-/**
- * @description Function for getting a random element from an array.
- * @function
- * @name getRandElFromArr
- * @param {Array} arr - The input array.
- * @returns {*} A random element from the array.
- */
-function getRandElFromArr(arr) {
-  return arr[getRandIndexFromArr(arr)];
-}
