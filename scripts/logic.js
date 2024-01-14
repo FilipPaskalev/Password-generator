@@ -1,4 +1,12 @@
-// Function to prompt user for password options
+/**
+ * Function to prompts the user for password options, including length and character types.
+ * @returns {Object} An object containing password options:
+ *   - length {number} - The length of the password.
+ *   - inclSpecialChars {boolean} - Whether to include special characters.
+ *   - inclNumbers {boolean} - Whether to include numbers.
+ *   - inclLowerCase {boolean} - Whether to include lowercase letters.
+ *   - inclUpperCase {boolean} - Whether to include uppercase letters.
+ */
 function getPasswordOptions() {
   var length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
 
