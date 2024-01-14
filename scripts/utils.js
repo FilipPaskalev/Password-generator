@@ -23,9 +23,9 @@ const utils = {
     max: 128,
   },
   msgs: {
-    startAgain: "Please try again to generate password.",
+    startAgain: "Please try again to generate password (Press Generate Password button).",
     optionsCondition: "Select at least one option for generating the password.",
-    enterLength: (min, max) => `Enter length of the password. It should be a number between ${min} and ${max}`,
+    enterLength: (min, max) => `Enter length of the password. It should be a number between ${min} and ${max}.`,
     wrongLength: (min, max, startAgainMsg) => `Incorrect password length. Please enter a valid password length between, it should be number between ${min} and ${max}.\n\n${startAgainMsg}`,
     selectOption: (typeName, condition) => `Select if you want to include ${typeName} in password.\n${condition}`,
     noneSelectedOptions: (condition, startAgainMsg) => `None of the options have been selected. ${condition}\n\n${startAgainMsg}`,
