@@ -1,14 +1,28 @@
 # Password Generator Web Application
 
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) 
 
-## Overview
+## Table of content
+
+- [Password Generator Web Application](#password-generator-web-application)
+  - [Table of content](#table-of-content)
+  - [Project Description](#project-description)
+  - [Requirements](#requirements)
+  - [Installation instructions](#installation-instructions)
+    - [Option 1 - Download](#option-1---download)
+    - [Option 2 - Clone project](#option-2---clone-project)
+  - [Demo](#demo)
+    - [Preview](#preview)
+    - [Live demo](#live-demo)
+  - [References](#references)
+  - [License](#license)
+    - [MIT](#mit)
+
+## Project Description
 
 This project focuses on creating a user-friendly web application that allows user to generate secure and random passwords based on their specified criteria. The application runs in the browser and dynamically updated HTML and CSS, powered by custom JavaScript code. The goal is to provide a polished and responsive user interface adaptable to various screen sizes.
 
-## Functional description
+## Requirements
 
 Web application will:
 1. Generate a password when the "Generate Password" button is clicked.
@@ -18,9 +32,9 @@ Web application will:
 3. Validate each input, ensuring at least one character type is selected.
 4. Display the generated password in the page.
 
-## Installation
+## Installation instructions
 
-### Option 1
+### Option 1 - Download
 
 Download the project from GitHub [repository](https://github.com/FilipPaskalev/Password-generator.git) on your local machine.
 
@@ -47,7 +61,7 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 
 13. Open project with VS Code or other IDE.
 
-### Option 2 - Clone project from [GitHuB](https://github.com/) repository
+### Option 2 - Clone project
 
 1. On GitHub.com, navigate to the main page of the repository. [(link to repository)](https://github.com/FilipPaskalev/Password-generator.git).
 
@@ -83,6 +97,20 @@ $ git clone https://github.com/FilipPaskalev/Password-generator.git
 > Unpacking objects: 100% (10/10), done.
 ```
 
+## Project structure
+
+```
+project/
+  assets/
+    imgs/
+  scripts/
+.prettierrc
+index.html
+LICENSE
+README.md
+
+```
+
 ## Demo
 
 ### Preview
@@ -94,6 +122,12 @@ Screenshot of the application.
 ### Live demo
 
 You can find deployed version of the project on [here](https://filippaskalev.github.io/Password-generator/).
+
+## References
+
+[15 Elements to Include in Your README Document](https://www.archbee.com/blog/readme-document-elements#:~:text=A%20comprehensive%20README%20should%20include,%2C%20acknowledgments%2C%20and%20license%20information.)
+
+[The Markdown elements outlined in the original design document.](https://www.markdownguide.org/basic-syntax/)
 
 ## License
 
