@@ -8,8 +8,10 @@
  *   - inclUpperCase {boolean} - Whether to include uppercase letters.
  */
 function getPasswordOptions() {
+  // Get password length from user
   var length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
 
+  // Length validation
   if (isNaN(length) || length < utils.length.min || length > utils.length.max) {
     alert(utils.msgs.wrongLength(utils.length.min, utils.length.max, utils.msgs.startAgain));
     return;
@@ -39,15 +41,15 @@ function getPasswordOptions() {
  * @returns {string} The generated password.
  */
 function generatePassword() {
-  // var options = getPasswordOptions();
+  var options = getPasswordOptions();
 
-  var options = {
-    length: 10,
-    inclLowerCase: false,
-    inclNumbers: true,
-    inclSpecialChars: false,
-    inclUpperCase: true,
-  };
+  // var options = {
+  //   length: 10,
+  //   inclLowerCase: false,
+  //   inclNumbers: true,
+  //   inclSpecialChars: false,
+  //   inclUpperCase: true,
+  // };
 
   var password = "";
 
