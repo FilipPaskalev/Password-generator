@@ -32,12 +32,24 @@ const utils = {
   }
 }
 
-// Function for getting random index from given array
+/**
+ * @description Function to choose randomly index from given array and return Index.
+ * @function
+ * @name getRandIndexFromArr
+ * @param {Array} arr - The input array.
+ * @returns {number} A random index from the array.
+ */
 function getRandIndexFromArr(arr) {
-  return Math.floor(Math.random() * arr.length);
+  return parseInt(Math.floor(Math.random() * arr.length));
 }
 
-// Function for getting a random element from an array
+/**
+ * @description Function for getting a random element from an array.
+ * @function
+ * @name getRandElFromArr
+ * @param {Array} arr - The input array.
+ * @returns {*} A random element from the array.
+ */
 function getRandElFromArr(arr) {
   return arr[getRandIndexFromArr(arr)];
 }
