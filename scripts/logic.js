@@ -1,39 +1,37 @@
 /**
- * Function to prompts the user for password options, including length and character types.
- * @returns {Object} An object containing password options:
- *   - length {number} - The length of the password.
- *   - inclSpecialChars {boolean} - Whether to include special characters.
- *   - inclNumbers {boolean} - Whether to include numbers.
- *   - inclLowerCase {boolean} - Whether to include lowercase letters.
- *   - inclUpperCase {boolean} - Whether to include uppercase letters.
+ * @description Function to prompts the user to input for password options, including the length
+ * and types of characters. It validates the input and returns an object with the
+ * selected options if they are valid. If not, it returns undefined.
+ * @returns {Object | undefined} An object containing password options if valid options are selected, undefined otherwise.
+ * @property {number} length - The length of the password.
+ * @property {boolean} inclSymbols - Whether to include special characters.
+ * @property {boolean} inclNumbers - Whether to include numbers.
+ * @property {boolean} inclLowerCase - Whether to include lowercase letters.
+ * @property {boolean} inclUpperCase - Whether to include uppercase letters.
  */
 function getPasswordOptions() {
   // Get password length from user
   var length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
 
-  // Length validation
+  // Length validation of the password
   if (isNaN(length) || length < utils.length.min || length > utils.length.max) {
     alert(utils.msgs.wrongLength(utils.length.min, utils.length.max, utils.msgs.startAgain));
     return;
   }
 
-  var inclSpecialChars = confirm(utils.msgs.selectOption(utils.chars[0].typeName, utils.msgs.optionsCondition));
+  // Get selected user options
+  var inclSymbols = confirm(utils.msgs.selectOption(utils.chars[0].typeName, utils.msgs.optionsCondition));
   var inclNumbers = confirm(utils.msgs.selectOption(utils.chars[1].typeName, utils.msgs.optionsCondition));
   var inclLowerCase = confirm(utils.msgs.selectOption(utils.chars[2].typeName, utils.msgs.optionsCondition));
   var inclUpperCase = confirm(utils.msgs.selectOption(utils.chars[3].typeName, utils.msgs.optionsCondition));
 
-  if (!inclSpecialChars && !inclNumbers && !inclLowerCase && !inclUpperCase) {
+  // Check that user has selected at least one option
+  if (!inclSymbols && !inclNumbers && !inclLowerCase && !inclUpperCase) {
     alert(utils.msgs.noneSelectedOptions(utils.msgs.optionsCondition, utils.msgs.startAgain));
     return;
   }
 
-  return {
-    length,
-    inclSpecialChars,
-    inclNumbers,
-    inclLowerCase,
-    inclUpperCase,
-  };
+  return { length, inclSymbols, inclNumbers, inclLowerCase, inclUpperCase };
 }
 
 /**
@@ -41,49 +39,53 @@ function getPasswordOptions() {
  * @returns {string} The generated password.
  */
 function generatePassword() {
-  var options = getPasswordOptions();
+  // Get user inputs
+  // var options = getPasswordOptions();
 
-  // Test object
-  // To test comment line 44 and remove comments from line 49 to line 55
-  // This will hardcore user input instead to enter manual inputs.
-  // var options = {
-  //   length: 10,
-  //   inclLowerCase: false,
-  //   inclNumbers: true,
-  //   inclSpecialChars: false,
-  //   inclUpperCase: true,
-  // };
-
+  // Init empty var for password
   var password = "";
 
+  // Init empty var for possible characters, that will be included in password
   var characters = "";
 
-  if (options.inclSpecialChars) {
-    password = password.concat(getRandElFromArr(utils.chars[0].special));
-    characters = characters.concat(utils.chars[0].special);
+  // Test object
+  // TODO fix the lines number
+  // To test comment line 46 and remove comments from line 55 to line 61
+  // This will hardcore user input instead to enter manual inputs.
+  var options = {
+    length: 20,
+    inclSymbols: false,
+    inclNumbers: true,
+    inclLowerCase: false,
+    inclUpperCase: true,
+  };
+
+  // Ensure that option is passed with some data and is NOT undefined
+  if (!options) return password;
+
+  if (options.inclSymbols) {
+    password += utils.chars[0].symbols[getRandIndexFromArr(utils.chars[0].symbols)];
+    characters += utils.chars[0].symbols.join("");
   }
 
   if (options.inclNumbers) {
-    password = password.concat(getRandElFromArr(utils.chars[1].numbers));
-    characters = characters.concat(utils.chars[1].numbers);
+    password += utils.chars[1].numbers[getRandIndexFromArr(utils.chars[1].numbers)];
+    characters += utils.chars[1].numbers.join("");
   }
 
   if (options.inclLowerCase) {
-    password = password.concat(getRandElFromArr(utils.chars[2].lowerCased));
-    characters = characters.concat(utils.chars[2].lowerCased);
+    password += utils.chars[2].lowerCase[getRandIndexFromArr(utils.chars[2].lowerCase)];
+    characters += utils.chars[2].lowerCase.join("");
   }
 
   if (options.inclUpperCase) {
-    password = password.concat(getRandElFromArr(utils.chars[3].upperCase));
-    characters = characters.concat(utils.chars[3].upperCase);
+    password += utils.chars[3].upperCase[getRandIndexFromArr(utils.chars[3].upperCase)];
+    characters += utils.chars[3].upperCase.join("");
   }
-
-  characters = characters.split(",");
 
   while (password.length < options.length) {
     var randIndex = getRandIndexFromArr(characters);
-    var randomChar = characters[randIndex];
-    password = password.concat(randomChar);
+    password += characters.charAt(randIndex);
   }
 
   return password;
