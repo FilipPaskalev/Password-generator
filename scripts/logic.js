@@ -43,6 +43,9 @@ function getPasswordOptions() {
 function generatePassword() {
   var options = getPasswordOptions();
 
+  // Test object
+  // To test comment line 44 and remove comments from line 49 to line 55
+  // This will hardcore user input instead to enter manual inputs.
   // var options = {
   //   length: 10,
   //   inclLowerCase: false,
@@ -69,6 +72,7 @@ function generatePassword() {
     password = password.concat(getRandElFromArr(utils.chars[2].lowerCased));
     characters = characters.concat(utils.chars[2].lowerCased);
   }
+
   if (options.inclUpperCase) {
     password = password.concat(getRandElFromArr(utils.chars[3].upperCase));
     characters = characters.concat(utils.chars[3].upperCase);
