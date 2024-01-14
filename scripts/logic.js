@@ -34,7 +34,10 @@ function getPasswordOptions() {
   };
 }
 
-// Function to generate password with user input
+/**
+ * Generates a password based on user inputs.
+ * @returns {string} The generated password.
+ */
 function generatePassword() {
   // var options = getPasswordOptions();
 
