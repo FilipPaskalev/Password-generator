@@ -16,6 +16,7 @@
     - [Preview](#preview)
     - [Live demo](#live-demo)
   - [References](#references)
+  - [Features](#features)
   - [License](#license)
     - [MIT](#mit)
 
@@ -134,6 +135,27 @@ You can find deployed version of the project on [here](https://filippaskalev.git
 [15 Elements to Include in Your README Document](https://www.archbee.com/blog/readme-document-elements#:~:text=A%20comprehensive%20README%20should%20include,%2C%20acknowledgments%2C%20and%20license%20information.)
 
 [The Markdown elements outlined in the original design document.](https://www.markdownguide.org/basic-syntax/)
+
+[How to concatenate strings in JavaScript?](https://codedamn.com/news/javascript/how-to-concatenate-strings-in-javascript)
+
+[How to check if value is undefined or null in JavaScript](https://codedamn.com/news/javascript/check-if-undefined-null)
+
+[Detecting an undefined object property](https://stackoverflow.com/questions/27509/detecting-an-undefined-object-property)
+
+## Features
+
+- Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. [(example)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+
+- Change UI to give user ability to select password length from html with range sliders element. [(example)](https://www.w3schools.com/howto/howto_js_rangeslider.asp)
+
+- Add to UI button where user will be able to copy generated password.
+
+- Add a element that shows (after password is generated) if the password in strong.
+
+- Add information sections (What makes a password strong?):
+    - What is a strong pass­word?
+    - Why should my password be random?
+    - Why should my password be unique?
 
 ## License
 
