@@ -81,7 +81,7 @@ function generatePassword() {
     inclLowerCase: false,
     inclNumbers: true,
     inclSpecialChars: false,
-    inclUpperCase: false,
+    inclUpperCase: true,
   };
 
   var password = "";
