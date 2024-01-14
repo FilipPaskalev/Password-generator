@@ -62,31 +62,59 @@ function getPasswordOptions() {
   return options;
 }
 
+// Function for getting random index from given array
+function getRandIndexFromArr(arr) {
+  return Math.floor(Math.random() * arr.length);
+}
+
 // Function for getting a random element from an array
-function getRandom(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+function getRandElFromArr(arr) {
+  return arr[getRandIndexFromArr(arr)];
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  var options = getPasswordOptions();
+  // var options = getPasswordOptions();
+
+  var options = {
+    length: 10,
+    inclLowerCase: false,
+    inclNumbers: true,
+    inclSpecialChars: false,
+    inclUpperCase: false,
+  };
 
   var password = "";
 
-  if (options.inclSpecialChars) password = password.concat(getRandom(utils.chars[0].special));
-  if (options.inclNumbers) password = password.concat(getRandom(utils.chars[1].numeric));
-  if (options.inclLowerCase) password = password.concat(getRandom(utils.chars[2].lowerCased));
-  if (options.inclUpperCase) password = password.concat(getRandom(utils.chars[3].upperCase));
+  var characters = "";
+
+  if (options.inclSpecialChars) {
+    password = password.concat(getRandElFromArr(utils.chars[0].special));
+    characters = characters.concat(utils.chars[0].special);
+  }
+
+  if (options.inclNumbers) {
+    password = password.concat(getRandElFromArr(utils.chars[1].numeric));
+    characters = characters.concat(utils.chars[1].numeric);
+  }
+
+  if (options.inclLowerCase) {
+    password = password.concat(getRandElFromArr(utils.chars[2].lowerCased));
+    characters = characters.concat(utils.chars[2].lowerCased);
+  }
+  if (options.inclUpperCase) {
+    password = password.concat(getRandElFromArr(utils.chars[3].upperCase));
+    characters = characters.concat(utils.chars[3].upperCase);
+  }
+
+  characters = characters.split(",");
 
   while (password.length < options.length) {
-    var randomChar = getRandom([
-      utils.chars[0].special,
-      utils.chars[1].numeric,
-      utils.chars[2].lowerCased,
-      utils.chars[3].upperCase,
-    ]);
-    password += getRandom(randomChar);
+    var randIndex = getRandIndexFromArr(characters);
+    var randomChar = characters[randIndex];
+    password = password.concat(randomChar);
   }
+
   return password;
 }
 
