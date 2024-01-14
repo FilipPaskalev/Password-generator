@@ -40,7 +40,7 @@ function getPasswordOptions() {
  */
 function generatePassword() {
   // Get user inputs
-  // var options = getPasswordOptions();
+  var options = getPasswordOptions();
 
   // Init empty var for password
   var password = "";
@@ -48,17 +48,15 @@ function generatePassword() {
   // Init empty var for possible characters, that will be included in password
   var characters = "";
 
-  // Test object
-  // TODO fix the lines number
-  // To test comment line 46 and remove comments from line 55 to line 61
-  // This will hardcore user input instead to enter manual inputs.
-  var options = {
-    length: 20,
-    inclSymbols: false,
-    inclNumbers: true,
-    inclLowerCase: false,
-    inclUpperCase: true,
-  };
+  // Test - To test comment line 43 and remove comments from line 53 to line 59.
+  // This will hardcore user input instead to enter manual inputs every time.
+  // var options = {
+  //   length: 20,
+  //   inclSymbols: false,
+  //   inclNumbers: true,
+  //   inclLowerCase: false,
+  //   inclUpperCase: true,
+  // };
 
   // Ensure that option is passed with some data and is NOT undefined
   if (!options) return password;
