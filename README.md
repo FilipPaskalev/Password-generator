@@ -1,8 +1,11 @@
 # Password Generator Web Application
 
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+<div align="center">
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)"
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+</div>
+
 
 ## Overview
 
@@ -38,9 +41,14 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 
 ![](./assets/imgs/gitHub-dropdown-download-zip-selection.png)
 
-11. Unzip the project. (You can use [7-zip](https://www.7-zip.org/) if you don't have software for unzipping. It's free.)
+11. Unzip the project. 
 
-12. Open project with VS Code or other IDE.
+> [!TIP]
+> You can use 7-Zip if you don't have file archiver. 
+> **7-Zip** is **free software** with **open source**. The most of the code is under the **GNU LGPL** license. Some parts of the code are under the BSD 3-clause License. Also there is unRAR license restriction for some parts of the code. Read [7-Zip License](https://www.7-zip.org/license.txt) information. 
+> Download the application from [official website](https://www.7-zip.org/).
+
+13. Open project with VS Code or other IDE.
 
 ### Option 2 - Clone project from [GitHuB](https://github.com/) repository
 
