@@ -7,7 +7,7 @@ const utils = {
     },
     {
       typeName: "number characters",
-      numeric:["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+      numbers:["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
     },
     {
       typeName: "lower case letters",
@@ -34,32 +34,30 @@ const utils = {
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var options = {
-    length: 0,
-    inclSpecialChars: false,
-    inclNumbers: false,
-    inclLowerCase: false,
-    inclUpperCase: false,
-  };
+  var length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
 
-  options.length = parseInt(prompt(utils.msgs.enterLength(utils.length.min, utils.length.max)));
-
-  if (isNaN(options.length) || options.length < utils.length.min || options.length > utils.length.max) {
+  if (isNaN(length) || length < utils.length.min || length > utils.length.max) {
     alert(utils.msgs.wrongLength(utils.length.min, utils.length.max, utils.msgs.startAgain));
     return;
   }
 
-  options.inclSpecialChars = confirm(utils.msgs.selectOption(utils.chars[0].typeName, utils.msgs.optionsCondition));
-  options.inclNumbers = confirm(utils.msgs.selectOption(utils.chars[1].typeName, utils.msgs.optionsCondition));
-  options.inclLowerCase = confirm(utils.msgs.selectOption(utils.chars[2].typeName, utils.msgs.optionsCondition));
-  options.inclUpperCase = confirm(utils.msgs.selectOption(utils.chars[3].typeName, utils.msgs.optionsCondition));
+  var inclSpecialChars = confirm(utils.msgs.selectOption(utils.chars[0].typeName, utils.msgs.optionsCondition));
+  var inclNumbers = confirm(utils.msgs.selectOption(utils.chars[1].typeName, utils.msgs.optionsCondition));
+  var inclLowerCase = confirm(utils.msgs.selectOption(utils.chars[2].typeName, utils.msgs.optionsCondition));
+  var inclUpperCase = confirm(utils.msgs.selectOption(utils.chars[3].typeName, utils.msgs.optionsCondition));
 
-  if (!options.inclSpecialChars && !options.inclNumbers && !options.inclLowerCase && !options.inclUpperCase) {
+  if (!inclSpecialChars && !inclNumbers && !inclLowerCase && !inclUpperCase) {
     alert(utils.msgs.noneSelectedOptions(utils.msgs.optionsCondition, utils.msgs.startAgain));
     return;
   }
 
-  return options;
+  return {
+    length,
+    inclSpecialChars,
+    inclNumbers,
+    inclLowerCase,
+    inclUpperCase,
+  };
 }
 
 // Function for getting random index from given array
@@ -94,8 +92,8 @@ function generatePassword() {
   }
 
   if (options.inclNumbers) {
-    password = password.concat(getRandElFromArr(utils.chars[1].numeric));
-    characters = characters.concat(utils.chars[1].numeric);
+    password = password.concat(getRandElFromArr(utils.chars[1].numbers));
+    characters = characters.concat(utils.chars[1].numbers);
   }
 
   if (options.inclLowerCase) {
