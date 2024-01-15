@@ -2,9 +2,7 @@
 
 [![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/Overview.en.html) [![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://www.javascript.com)
-[![edX](https://img.shields.io/badge/edx-gray?style=for-the-badge&logo=edX&link=https://www.edx.org/)](https://www.edx.org/)
-[![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
-[![VSCode](https://img.shields.io/badge/VSCode-2C2C32?style=for-the-badge&logo=visualstudiocode&logoColor=0F66B8&link=https://code.visualstudio.com/)](https://code.visualstudio.com/)
+[![edX](https://img.shields.io/badge/edx-black?style=for-the-badge&logo=edX&link=https://www.edx.org/)](https://www.edx.org/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&link=https://www.edx.org/)](https://www.edx.org/)
 
 ## Table of content
@@ -29,6 +27,9 @@
     - [Files](#files)
     - [Languages](#languages)
   - [Tools and extensions](#tools-and-extensions)
+    - [Prettier](#prettier)
+    - [VSCode](#vscode)
+    - [VS Code Counter](#vs-code-counter)
   - [References](#references)
   - [License](#license)
     - [MIT](#mit)
@@ -208,6 +209,17 @@ Total : 7 files,  388 codes, 45 comments, 112 blanks, all 545 lines
 
 ## Tools and extensions
 
+### Prettier
+
+[Prettier](https://prettier.io/) is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+
+### VSCode
+
+[Visual Studio Code](https://code.visualstudio.com/) is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtime (such as C++, C#, Java, Python, PHP, Go, .NET).
+
+### VS Code Counter
+
+[VS Code extension](https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter) counts blank lines, comment lines, and physical lines of source code in many programming languages. This extension uses other language extensions to determine the line of code. Therefore, you may need to install the language extension to support a new language. Conversely, as the number of language extensions increases, the range of support for this feature also increases.
 
 ## References
 
