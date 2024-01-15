@@ -1,11 +1,11 @@
 # Password Generator Web Application
 
-[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/Overview.en.html)
-[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.com/)
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/Overview.en.html) [![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://www.javascript.com)
-[![edX](https://img.shields.io/badge/edX-All%20Rights%20Reserved-black?labelColor=f0e5e4&style=for-the-badge&logo=edX&logoColor=black&link=https://www.edx.org/)](https://www.edx.org/)
+[![edX](https://img.shields.io/badge/edx-gray?style=for-the-badge&logo=edX&link=https://www.edx.org/)](https://www.edx.org/)
 [![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
 [![VSCode](https://img.shields.io/badge/VSCode-2C2C32?style=for-the-badge&logo=visualstudiocode&logoColor=0F66B8&link=https://code.visualstudio.com/)](https://code.visualstudio.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&link=https://www.edx.org/)](https://www.edx.org/)
 
 ## Table of content
 
