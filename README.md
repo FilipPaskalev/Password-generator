@@ -20,6 +20,11 @@
   - [Demo](#demo)
   - [References](#references)
   - [Features](#features)
+    - [Checkbox](#checkbox)
+    - [Range slider](#range-slider)
+    - [Copy password button](#copy-password-button)
+    - [Password score](#password-score)
+    - [Information sections](#information-sections)
   - [License](#license)
     - [MIT](#mit)
 
@@ -106,7 +111,7 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 
 ```
 root/                   <!-- root directory -->
-  |----assets/          <!-- directory for the assets -->
+|----assets/          <!-- directory for the assets -->
   |----imgs/            <!-- contains all needed images files -->
   |--scripts/           <!-- directory for javascript files -->
       |----index.js     <!-- root script file -->
@@ -149,28 +154,38 @@ Screenshot of the application is on the image below.
 
 ## Features
 
-1. Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. 
+### Checkbox
 
-    [![](./assets/imgs/readme-features-characters.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. 
 
-    > [!NOTE]
-    > Click on the image for more information. ☝️
+[![](./assets/imgs/readme-features-characters.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
 
-2. Change UI to give user ability to select password length from html with range slider element. 
+> [!NOTE]
+> Click on the image for more information. ☝️
 
-    [![](./assets/imgs/readme-password-length-slider.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
-    
-    > [!NOTE]
-    > Click on the image for more information. ☝️
+### Range slider
 
-4. Add to UI button where user will be able to copy (to clipboard) generated password. button should be positioned next to button generate password.
+Change UI to give user ability to select password length from html with range slider element.
 
-5. Add an element that shows (after password is generated) password's score: very week, week, good, strong, very strong.
+[![](./assets/imgs/readme-password-length-slider.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
 
-6. Add information sections (What makes a password strong?):
-    - What is a strong pass­word?
-    - Why should my password be random?
-    - Why should my password be unique?
+> [!NOTE]
+> Click on the image for more information. ☝️
+
+### Copy password button
+
+Add to UI button where user will be able to copy (to clipboard) generated password. button should be positioned next to button generate password.
+
+### Password score
+
+Add an element that shows (after password is generated) password's score: very week, week, good, strong, very strong.
+
+### Information sections
+
+Add information sections (What makes a password strong?):
+- What is a strong pass­word?
+- Why should my password be random?
+- Why should my password be unique?
 
 ## License
 
