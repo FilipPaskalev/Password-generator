@@ -18,13 +18,18 @@
     - [Option 2 - Clone project](#option-2---clone-project)
   - [Project structure](#project-structure)
   - [Demo](#demo)
-  - [References](#references)
   - [Features](#features)
     - [Checkbox](#checkbox)
     - [Range slider](#range-slider)
     - [Copy password button](#copy-password-button)
     - [Password score](#password-score)
     - [Information sections](#information-sections)
+  - [Statistics](#statistics)
+    - [Directories](#directories)
+    - [Files](#files)
+    - [Languages](#languages)
+  - [Tools and extensions](#tools-and-extensions)
+  - [References](#references)
   - [License](#license)
     - [MIT](#mit)
 
@@ -128,35 +133,18 @@ root/                   main directory of the project
 
 ## Demo
 
-Screenshot of the application is on the image below. 
+Screenshot of the application is on the image below.
 
 [![demo screenshot](./assets/imgs/05-javascript-challenge-demo.png)](https://filippaskalev.github.io/Password-generator/)
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > You can find deployed version of the project on 👉[direct link here](https://filippaskalev.github.io/Password-generator/) or by clicking on the picture above. ☝️
-
-
-## References
-
-[15 Elements to Include in Your README Document](https://www.archbee.com/blog/readme-document-elements#:~:text=A%20comprehensive%20README%20should%20include,%2C%20acknowledgments%2C%20and%20license%20information.)
-
-[The Markdown elements outlined in the original design document.](https://www.markdownguide.org/basic-syntax/)
-
-[How to concatenate strings in JavaScript?](https://codedamn.com/news/javascript/how-to-concatenate-strings-in-javascript)
-
-[How to check if value is undefined or null in JavaScript](https://codedamn.com/news/javascript/check-if-undefined-null)
-
-[Detecting an undefined object property](https://stackoverflow.com/questions/27509/detecting-an-undefined-object-property)
-
-[Complete list of GitHub markdown emojis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
-
-[Advanced Markdown Guide](https://github.com/DavidWells/advanced-markdown/blob/master/README.md)
 
 ## Features
 
 ### Checkbox
 
-Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. 
+Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction.
 
 [![](./assets/imgs/readme-features-characters.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
 
@@ -167,8 +155,7 @@ Change UI to give user ability to select password options with Input Type Checkb
 
 Change UI to give user ability to select password length from html with range slider element.
 
-[![](./assets/imgs/readme-password-length-slider.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
-
+[![Length slider](./assets/imgs/readme-password-length-slider.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
 > [!NOTE]
 > Click on the image for more information. ☝️
 
@@ -186,6 +173,57 @@ Add information sections (What makes a password strong?):
 - What is a strong pass­word?
 - Why should my password be random?
 - Why should my password be unique?
+
+## Statistics
+
+Total : 7 files,  388 codes, 45 comments, 112 blanks, all 545 lines
+
+### Directories
+| path | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| . | 7 | 388 | 45 | 112 | 545 |
+| . (Files) | 3 | 183 | 0 | 71 | 254 |
+| scripts | 3 | 85 | 45 | 23 | 153 |
+| styles | 1 | 120 | 0 | 18 | 138 |
+
+### Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [.prettierrc](/.prettierrc) | JSON | 5 | 0 | 1 | 6 |
+| [README.md](/README.md) | Markdown | 147 | 0 | 67 | 214 |
+| [index.html](/index.html) | HTML | 31 | 0 | 3 | 34 |
+| [scripts/index.js](/scripts/index.js) | JavaScript | 7 | 3 | 4 | 14 |
+| [scripts/logic.js](/scripts/logic.js) | JavaScript | 43 | 34 | 17 | 94 |
+| [scripts/utils.js](/scripts/utils.js) | JavaScript | 35 | 8 | 2 | 45 |
+| [styles/style.css](/styles/style.css) | CSS | 120 | 0 | 18 | 138 |
+
+### Languages
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Markdown | 1 | 147 | 0 | 67 | 214 |
+| CSS | 1 | 120 | 0 | 18 | 138 |
+| JavaScript | 3 | 85 | 45 | 23 | 153 |
+| HTML | 1 | 31 | 0 | 3 | 34 |
+| JSON | 1 | 5 | 0 | 1 | 6 |
+
+## Tools and extensions
+
+
+## References
+
+[15 Elements to Include in Your README Document](https://www.archbee.com/blog/readme-document-elements#:~:text=A%20comprehensive%20README%20should%20include,%2C%20acknowledgments%2C%20and%20license%20information.)
+
+[The Markdown elements outlined in the original design document.](https://www.markdownguide.org/basic-syntax/)
+
+[How to concatenate strings in JavaScript?](https://codedamn.com/news/javascript/how-to-concatenate-strings-in-javascript)
+
+[How to check if value is undefined or null in JavaScript](https://codedamn.com/news/javascript/check-if-undefined-null)
+
+[Detecting an undefined object property](https://stackoverflow.com/questions/27509/detecting-an-undefined-object-property)
+
+[Complete list of GitHub markdown emojis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
+
+[Advanced Markdown Guide](https://github.com/DavidWells/advanced-markdown/blob/master/README.md)
 
 ## License
 
