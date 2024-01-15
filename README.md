@@ -21,14 +21,14 @@
     - [Copy password button](#copy-password-button)
     - [Password score](#password-score)
     - [Information sections](#information-sections)
-  - [Statistics](#statistics)
-    - [Directories](#directories)
-    - [Files](#files)
-    - [Languages](#languages)
   - [Tools and extensions](#tools-and-extensions)
     - [Prettier](#prettier)
     - [VSCode](#vscode)
     - [VS Code Counter](#vs-code-counter)
+  - [Statistics](#statistics)
+    - [Directories](#directories)
+    - [Files](#files)
+    - [Languages](#languages)
   - [References](#references)
   - [License](#license)
     - [MIT](#mit)
@@ -175,6 +175,20 @@ Add information sections (What makes a password strong?):
 - Why should my password be random?
 - Why should my password be unique?
 
+## Tools and extensions
+
+### Prettier
+
+[Prettier](https://prettier.io/) is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+
+### VSCode
+
+[Visual Studio Code](https://code.visualstudio.com/) is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtime (such as C++, C#, Java, Python, PHP, Go, .NET).
+
+### VS Code Counter
+
+[VS Code extension](https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter) counts blank lines, comment lines, and physical lines of source code in many programming languages. This extension uses other language extensions to determine the line of code. Therefore, you may need to install the language extension to support a new language. Conversely, as the number of language extensions increases, the range of support for this feature also increases.
+
 ## Statistics
 
 Total : 7 files,  388 codes, 45 comments, 112 blanks, all 545 lines
@@ -206,20 +220,6 @@ Total : 7 files,  388 codes, 45 comments, 112 blanks, all 545 lines
 | JavaScript | 3 | 85 | 45 | 23 | 153 |
 | HTML | 1 | 31 | 0 | 3 | 34 |
 | JSON | 1 | 5 | 0 | 1 | 6 |
-
-## Tools and extensions
-
-### Prettier
-
-[Prettier](https://prettier.io/) is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
-
-### VSCode
-
-[Visual Studio Code](https://code.visualstudio.com/) is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtime (such as C++, C#, Java, Python, PHP, Go, .NET).
-
-### VS Code Counter
-
-[VS Code extension](https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter) counts blank lines, comment lines, and physical lines of source code in many programming languages. This extension uses other language extensions to determine the line of code. Therefore, you may need to install the language extension to support a new language. Conversely, as the number of language extensions increases, the range of support for this feature also increases.
 
 ## References
 
