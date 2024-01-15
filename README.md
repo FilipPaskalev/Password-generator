@@ -25,7 +25,7 @@
 
 ## Project Description
 
-This project focuses on creating a user-friendly web application that allows user to generate secure and random passwords based on their specified criteria. The application runs in the browser and dynamically updated HTML and CSS, powered by custom JavaScript code. The goal is to provide a polished and responsive user interface adaptable to various screen sizes.
+This project focuses on creating a user-friendly web application that allows user to **generate secure and random passwords based on their specified criteria**. The application runs in the browser and dynamically updated **HTML** and **CSS**, powered by custom **JavaScript** code. The goal is to provide a polished and responsive user interface adaptable to various screen sizes.
 
 ## Requirements
 
@@ -128,7 +128,7 @@ Screenshot of the application is on the image below.
 [![demo screenshot](./assets/imgs/05-javascript-challenge-demo.png)](https://filippaskalev.github.io/Password-generator/)
 
 > [!IMPORTANT]  
-> You can find deployed version of the project on 👉[here](https://filippaskalev.github.io/Password-generator/) or by clicking on the picture above. ☝️
+> You can find deployed version of the project on 👉[direct link here](https://filippaskalev.github.io/Password-generator/) or by clicking on the picture above. ☝️
 
 
 ## References
@@ -146,6 +146,7 @@ Screenshot of the application is on the image below.
 [Complete list of GitHub markdown emojis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
 
 [Advanced Markdown Guide](https://github.com/DavidWells/advanced-markdown/blob/master/README.md)
+
 ## Features
 
 1. Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. 
