@@ -116,9 +116,10 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 
 ```
 root/                   main directory of the project
+  |----.vscode          contains settings for vscode 
   |----assets/          directory for the assets - video, images, sounds ...
   |----imgs/            contains all needed images files for project
-  |--scripts/           directory for javascript files
+  |----scripts/           directory for javascript files
       |----index.js     root script file
       |----logic.js     store all logic for generating password
       |----utils.js     store all needed resources for logic.js
