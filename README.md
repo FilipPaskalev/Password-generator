@@ -110,19 +110,19 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 ## Project structure
 
 ```
-root/                   <!-- root directory -->
-|----assets/          <!-- directory for the assets -->
-  |----imgs/            <!-- contains all needed images files -->
-  |--scripts/           <!-- directory for javascript files -->
-      |----index.js     <!-- root script file -->
-      |----logic.js     <!-- store all logic for generating password -->
-      |----utils.js     <!-- store all needed resources for logic.js -->
-  |----styles/          <!-- directory for the styles -->
-      |----style.css    <!-- store css styles for index.html -->
-  |----.prettierrc      <!-- settings if you using Prettier extension -->
-  |----index.html       <!-- root html file -->
-  |----LICENSE          <!-- information about the license -->
-  |----README.md        <!-- file that describe the project -->
+root/                   main directory of the project
+  |----assets/          directory for the assets - video, images, sounds ...
+  |----imgs/            contains all needed images files for project
+  |--scripts/           directory for javascript files
+      |----index.js     root script file
+      |----logic.js     store all logic for generating password
+      |----utils.js     store all needed resources for logic.js
+  |----styles/          directory for the styles
+      |----style.css    store css styles for index.html
+  |----.prettierrc      settings if you using Prettier extension
+  |----index.html       root html file
+  |----LICENSE          information about the license
+  |----README.md        file that describe the project
 
 ```
 
