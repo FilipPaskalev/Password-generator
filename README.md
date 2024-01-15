@@ -144,17 +144,17 @@ You can find deployed version of the project on [here](https://filippaskalev.git
 
 ## Features
 
-- Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. [(example)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+1. Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. [![](./assets/imgs/readme-features-characters.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
 
-- Change UI to give user ability to select password length from html with range sliders element. [(example)](https://www.w3schools.com/howto/howto_js_rangeslider.asp)
+2. Change UI to give user ability to select password length from html with range slider element. [![](./assets/imgs/readme-password-length-slider.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
 
-- Add to UI button where user will be able to copy generated password.
+3. Add to UI button where user will be able to copy (to clipboard) generated password. button should be positioned next to button generate password.
 
-- Add a element that shows (after password is generated) if the password in strong.
+4. Add an element that shows (after password is generated) password's score: very week, week, good, strong, very strong.
 
-- Add information sections (What makes a password strong?):
+5. Add information sections (What makes a password strong?):
     - What is a strong pass­word?
-    - Why should my password be random?
+    cb n,hghdcvvbgvnbnbgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggs- Why should my password be random?
     - Why should my password be unique?
 
 ## License
