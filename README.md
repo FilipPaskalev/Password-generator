@@ -1,6 +1,11 @@
 # Password Generator Web Application
 
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) 
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/Overview.en.html)
+[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://www.javascript.com)
+[![edX](https://img.shields.io/badge/edX-All%20Rights%20Reserved-black?labelColor=f0e5e4&style=for-the-badge&logo=edX&logoColor=black&link=https://www.edx.org/)](https://www.edx.org/)
+[![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
+[![VSCode](https://img.shields.io/badge/VSCode-2C2C32?style=for-the-badge&logo=visualstudiocode&logoColor=0F66B8&link=https://code.visualstudio.com/)](https://code.visualstudio.com/)
 
 ## Table of content
 
@@ -44,22 +49,22 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 
 2. Select ```Code``` from top navigation section 
 
-![](./assets/imgs/gitHub-section-select-code.png)
+    ![](./assets/imgs/gitHub-section-select-code.png)
 
 5. Select ```<> Code``` dropdown button from sub section 
 
-![](./assets/imgs/gitHub-section-select-code-dropdown.png)
+    ![](./assets/imgs/gitHub-section-select-code-dropdown.png)
 
 8. Select ```Download ZIP``` from dropdown menu to download project in .zip format 
 
-![](./assets/imgs/gitHub-dropdown-download-zip-selection.png)
+    ![](./assets/imgs/gitHub-dropdown-download-zip-selection.png)
 
 11. Unzip the project. 
 
-> [!TIP]
-> You can use 7-Zip if you don't have file archiver. 
-> **7-Zip** is **free software** with **open source**. The most of the code is under the **GNU LGPL** license. Some parts of the code are under the BSD 3-clause License. Also there is unRAR license restriction for some parts of the code. Read [7-Zip License](https://www.7-zip.org/license.txt) information. 
-> Download the application from [official website](https://www.7-zip.org/).
+    > [!TIP]
+    > You can use 7-Zip if you don't have file archiver. 
+    >**7-Zip** is **free software** with **open source**. The most of the code is under the **GNU LGPL** license. Some parts of the code are under the BSD 3-clause License. Also there is unRAR license restriction for some parts of the code. Read [7-Zip License](https://www.7-zip.org/license.txt) information. 
+    > Download the application from [official website](https://www.7-zip.org/).
 
 13. Open project with VS Code or other IDE.
 
@@ -69,14 +74,14 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 
 2. Above the list of files, click  Code. 
 
-![](./assets/imgs/gitHub-section-select-code-dropdown.png)
+    ![](./assets/imgs/gitHub-section-select-code-dropdown.png)
 
 5. Copy the URL for the repository.
 - To clone the repository using HTTPS, under "HTTPS", click <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-label="Copy to clipboard" role="img"><path d="M3.626 3.533a.249.249 0 0 0-.126.217v9.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-9.5a.249.249 0 0 0-.126-.217.75.75 0 0 1 .752-1.298c.541.313.874.89.874 1.515v9.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-9.5c0-.625.333-1.202.874-1.515a.75.75 0 0 1 .752 1.298ZM5.75 1h4.5a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75h-4.5A.75.75 0 0 1 5 4.75v-3A.75.75 0 0 1 5.75 1Zm.75 3h3V2.5h-3Z"></path></svg>.
 - To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-label="Copy to clipboard" role="img"><path d="M3.626 3.533a.249.249 0 0 0-.126.217v9.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-9.5a.249.249 0 0 0-.126-.217.75.75 0 0 1 .752-1.298c.541.313.874.89.874 1.515v9.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-9.5c0-.625.333-1.202.874-1.515a.75.75 0 0 1 .752 1.298ZM5.75 1h4.5a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75h-4.5A.75.75 0 0 1 5 4.75v-3A.75.75 0 0 1 5.75 1Zm.75 3h3V2.5h-3Z"></path></svg>.
 - To clone a repository using GitHub CLI, click GitHub CLI, then click <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" aria-label="Copy to clipboard" role="img"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>. 
 
-![](./assets/imgs/gitHub-https-copy.png)
+    ![](./assets/imgs/gitHub-https-copy.png)
 
 1. Open Git Bash.
 
@@ -84,20 +89,20 @@ Download the project from GitHub [repository](https://github.com/FilipPaskalev/P
 
 3. Type ```git clone```, and then paste the URL you copied earlier.
 
-```
-git clone https://github.com/FilipPaskalev/Password-generator.git
-```
+    ```
+    git clone https://github.com/FilipPaskalev/Password-generator.git
+    ```
 
 7. Press Enter to create your local clone.
 
-```
-$ git clone https://github.com/FilipPaskalev/Password-generator.git
-> Cloning into `Spoon-Knife`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-```
+    ```
+    $ git clone https://github.com/FilipPaskalev/Password-generator.git
+    > Cloning into `Spoon-Knife`...
+    > remote: Counting objects: 10, done.
+    > remote: Compressing objects: 100% (8/8), done.
+    > remove: Total 10 (delta 1), reused 10 (delta 1)
+    > Unpacking objects: 100% (10/10), done.
+    ```
 
 ## Project structure
 
@@ -144,17 +149,27 @@ You can find deployed version of the project on [here](https://filippaskalev.git
 
 ## Features
 
-1. Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. [![](./assets/imgs/readme-features-characters.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+1. Change UI to give user ability to select password options with Input Type Checkbox element in html file for better interaction. 
 
-2. Change UI to give user ability to select password length from html with range slider element. [![](./assets/imgs/readme-password-length-slider.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+    [![](./assets/imgs/readme-features-characters.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
 
-3. Add to UI button where user will be able to copy (to clipboard) generated password. button should be positioned next to button generate password.
+    > [!NOTE]
+    > Click on the image for more information.
 
-4. Add an element that shows (after password is generated) password's score: very week, week, good, strong, very strong.
+2. Change UI to give user ability to select password length from html with range slider element. 
 
-5. Add information sections (What makes a password strong?):
+    [![](./assets/imgs/readme-password-length-slider.png)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+    
+    > [!NOTE]
+    > Click on the image for more information.
+
+4. Add to UI button where user will be able to copy (to clipboard) generated password. button should be positioned next to button generate password.
+
+5. Add an element that shows (after password is generated) password's score: very week, week, good, strong, very strong.
+
+6. Add information sections (What makes a password strong?):
     - What is a strong pass­word?
-    cb n,hghdcvvbgvnbnbgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggs- Why should my password be random?
+    - Why should my password be random?
     - Why should my password be unique?
 
 ## License
@@ -182,4 +197,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+<div style="text-align: center;">© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.</style=>
